@@ -1,0 +1,22 @@
+{% trans_default_domain 'FOSUserBundle' %}
+<div class="form-group">
+    <style>
+        .fr
+        {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #1b1e21;
+            font-size: large;
+        }
+    </style>
+
+
+    <div class="my-custom-class-for-errors">
+        {{ form_errors(form) }}
+    </div>
+{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+    {{ form_widget(form,{ 'attr': {'class': 'fr'} }) }}
+    <div>
+        <input class="btn btn-primary" type="submit" value="{{ 'registration.submit'|trans }}" />
+    </div>
+{{ form_end(form) }}
+</div>

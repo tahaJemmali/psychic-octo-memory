@@ -1,0 +1,249 @@
+{% extends "front/autre/autre.html.twig" %}
+{% block titre %}Inscription{% endblock %}
+{% block body %}
+<script>
+    function nomVerify() {
+        var regex = /^[a-zA-Z]{3,}/;
+        var var1 = document.getElementById("checkout_name");
+
+        if(!regex.test(var1.value))
+        {
+            var1.style.borderColor = "red" ;
+            document.getElementById("textnom").innerHTML="*Saisir Votre Nom";
+            return false;
+        }
+        else
+        {
+            var1.style.borderColor = "" ;
+            document.getElementById("textnom").innerHTML="";
+            return true;
+        }
+    }
+
+    function prenomVerify() {
+        var regex = /^[a-zA-Z]{3,}/;
+        var var1 = document.getElementById("checkout_last_name");
+
+        if(!regex.test(var1.value))
+        {
+            var1.style.borderColor = "red" ;
+            document.getElementById("textprenom").innerHTML="*Saisir Votre Prénom";
+            return false;
+        }
+        else
+        {
+            var1.style.borderColor = "" ;
+            document.getElementById("textprenom").innerHTML="";
+            return true;
+        }
+    }
+    function emailVerify() {
+        var var1 = document.getElementById("checkout_email");
+
+        if (var1.value == "") {
+            var1.style.border = "1px solid #FF0000";
+            document.getElementById("textemail").innerHTML="*Entrer un E-mail";
+        }
+        else {var1.style.border = "";
+            document.getElementById("textemail").innerHTML="";
+        }
+
+    }
+    function mdpVerify() {
+        var pass = document.getElementById("checkout_password");
+
+        if (pass.value == "") {
+            pass.style.border = "1px solid #FF0000";
+            document.getElementById("textmdp").innerHTML = "*Entrer un mdp";
+        } else {
+            pass.style.border = "";
+            document.getElementById("textmdp").innerHTML = "";
+        }
+    }
+
+    function mdpcVerify() {
+        var pass = document.getElementById("checkout_password");
+        var pass2 = document.getElementById("checkout_password_confirm");
+
+        if (pass2.value != pass.value) {
+            pass2.style.border = "1px solid #FF0000";
+            document.getElementById("textmdpc").innerHTML="*Wrong password";}
+
+        else {pass2.style.border = "";
+            document.getElementById("textmdpc").innerHTML="";}
+    }
+
+    function paysVerify() {
+        var pass = document.getElementById("checkout_country");
+
+        if (pass.value == "") {
+            pass.style.border = "1px solid #FF0000";
+            document.getElementById("textpays").innerHTML = "*Entrer un pays";
+        } else {
+            pass.style.border = "";
+            document.getElementById("textpays").innerHTML = "";
+        }
+    }
+    function adressVerify() {
+        var pass = document.getElementById("checkout_address");
+
+        if (pass.value == "") {
+            pass.style.border = "1px solid #FF0000";
+            document.getElementById("textadress").innerHTML = "*Entrer votre adress";
+        } else {
+            pass.style.border = "";
+            document.getElementById("textadress").innerHTML = "";
+        }
+    }
+    function codepostalVerify() {
+        var pass = document.getElementById("checkout_zipcode");
+
+        if (pass.value == "") {
+            pass.style.border = "1px solid #FF0000";
+            document.getElementById("textcodepostal").innerHTML = "*Entrer un code postal";
+        } else {
+            pass.style.border = "";
+            document.getElementById("textcodepostal").innerHTML = "";
+        }
+    }
+    function villeVerify() {
+        var pass = document.getElementById("checkout_city");
+
+        if (pass.value == "") {
+            pass.style.border = "1px solid #FF0000";
+            document.getElementById("textville").innerHTML = "*Entrer une ville";
+        } else {
+            pass.style.border = "";
+            document.getElementById("textville").innerHTML = "";
+        }
+    }
+    function phoneVerify() {
+        var pass = document.getElementById("checkout_phone");
+
+        if (pass.value == "") {
+            pass.style.border = "1px solid #FF0000";
+            document.getElementById("textphone").innerHTML = "*Entrer un Numero de téléphone";
+        } else {
+            pass.style.border = "";
+            document.getElementById("textphone").innerHTML = "";
+        }
+    }
+</script>
+    <div class="col-lg-6">
+        <div class="billing">
+            <div class="checkout_title">Inserer vos informations</div>
+            <div class="checkout_form_container">
+                <form action="#" id="checkout_form" class="checkout_form">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <!-- Name -->
+                            <input type="text" id="checkout_name" class="checkout_input" placeholder="Nom" required="required" onblur="nomVerify()">
+                            <p id="textnom" class="ErrFah"></p>
+                        </div>
+                        <div class="col-lg-6">
+                            <!-- Last Name -->
+                            <input type="text" id="checkout_last_name" class="checkout_input" placeholder="Prénom" required="required" onblur="prenomVerify()">
+                            <p id="textprenom" class="ErrFah"></p>
+                        </div>
+                    </div>
+                    <div>
+                        <!-- Email -->
+                        <input type="email" id="checkout_email" class="checkout_input" placeholder="E-mail" required="required" onblur="emailVerify()">
+                        <p id="textemail" class="ErrFah"></p>
+                    </div>
+                    <div>
+                        <!-- Mdp -->
+                        <input type="password" id="checkout_password" class="checkout_input" placeholder="Mot de passe" required="required" onblur="mdpVerify()">
+                        <p id="textmdp" class="ErrFah"></p>
+                    </div>
+                    <div>
+                        <!-- Confirmer mdp -->
+                        <input type="password" id="checkout_password_confirm" class="checkout_input" placeholder="Confirmer Mot de Passe" required="required" onblur="mdpcVerify()">
+                        <p id="textmdpc" class="ErrFah"></p>
+                    </div>
+                    <div>
+                        <!-- Company -->
+                        <input type="text" id="checkout_company" placeholder="Date de Naissance" class="checkout_input" required="required" onblur="entrepriseVerify()">
+                        <p id="textentreprise" class="ErrFah"></p>
+                    </div>
+                    <div>
+                        <!-- Country -->
+                        <input name="checkout_country" id="checkout_country"  class="checkout_input" require="required" placeholder="Pays" onblur="paysVerify()">
+                        <p id="textpays" class="ErrFah"></p>
+                        <!--class="dropdown_item_select checkout_input" -->
+                        <!--<option>Pays</option>
+                        <option>Lithuania</option>
+                        <option>Sweden</option>
+                        <option>UK</option>
+                        <option>Italy</option>-->
+                        </input>
+                    </div>
+                    <div>
+                        <!-- Address -->
+                        <input type="text" id="checkout_address" class="checkout_input" placeholder="Address" required="required" onblur="adressVerify()">
+                        <p id="textadress" class="ErrFah"></p>
+                        <!--<input type="text" id="checkout_address_2" class="checkout_input checkout_address_2" placeholder="Address Line 2" required="required">-->
+                    </div>
+                    <div>
+                        <!-- Zipcode -->
+                        <input type="text" id="checkout_zipcode" class="checkout_input" placeholder="Code postal" required="required" onblur="codepostalVerify()">
+                        <p id="textcodepostal" class="ErrFah"></p>
+                    </div>
+                    <div>
+                        <!-- City / Town -->
+                        <input name="checkout_city" id="checkout_city" class="checkout_input" require="required" placeholder="Ville" onblur="villeVerify()">
+                        <p id="textville" class="ErrFah"></p>
+                        <!-- <option>City / Town</option>
+                         <option>City</option>
+                         <option>City</option>
+                         <option>City</option>
+                         <option>City</option>-->
+                        </input>
+                    </div>
+                    <!-- Province
+                    <div>
+
+                        <select name="checkout_province" id="checkout_province" class="dropdown_item_select checkout_input" require="required">
+                            <option>Province</option>
+                            <option>Province</option>
+                            <option>Province</option>
+                            <option>Province</option>
+                            <option>Province</option>
+                        </select>
+                    </div> -->
+                    <div>
+                        <!-- Phone no -->
+                        <input type="phone" id="checkout_phone" class="checkout_input" placeholder="Numéro de téléphone" required="required" onblur="phoneVerify()">
+                        <p id="textphone" class="ErrFah"></p>
+                    </div>
+                    <div class="checkout_extra">
+                        <ul>
+                            <li class="billing_info d-flex flex-row align-items-center justify-content-start">
+                                <label class="checkbox_container">
+                                    <input type="checkbox" id="cb_1" name="billing_checkbox" class="billing_checkbox">
+                                    <span class="checkbox_mark"></span>
+                                    <span class="checkbox_text">Conditions d'utilisation</span>
+                                </label>
+                            </li>
+                            <li class="billing_info d-flex flex-row align-items-center justify-content-start">
+                                <label class="checkbox_container">
+                                    <input type="checkbox" id="cb_2" name="billing_checkbox" class="billing_checkbox">
+                                    <span class="checkbox_mark"></span>
+                                    <span class="checkbox_text">S'inscrire à la Newsletter</span>
+                                </label>
+                            </li>
+                            <!--<li class="billing_info d-flex flex-row align-items-center justify-content-start">
+                                <label class="checkbox_container">
+                                    <input type="checkbox" id="cb_3" name="billing_checkbox" class="billing_checkbox">
+                                    <span class="checkbox_mark"></span>
+                                    <span class="checkbox_text">Subscribe to our newsletter</span>
+                                </label>
+                            </li>-->
+                        </ul>
+                    </div>
+                    <div class="checkout_button trans_200"><a href="checkout.html">S'inscrire</a></div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

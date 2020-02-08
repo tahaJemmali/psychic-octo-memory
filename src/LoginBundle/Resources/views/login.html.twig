@@ -1,0 +1,29 @@
+{% extends "front/autre/autre.html.twig" %}
+{% block titre %}Connexion{% endblock %}
+{% block body %}
+    <div class="login">
+        <div class="Connexion">Connexion</div>
+        <div class="form_login">
+            {% if errors %}
+<div class="alert alert-danger">{{ errors.messageKey }}</div>
+            {% endif %}
+            <form action="{{ path("login_homepage") }}" method="post" id="checkout_form" class="checkout_form">
+                <div class="row">
+                </div>
+                <div>
+                    <!-- Username -->
+                    <input type="text" id="Email" name="_username" placeholder="E-mail" class="checkout_input" value="{{ lastusername }}" onblur="loginVerify()">
+                    <p id="Emailtext" class="ErrFah"></p>
+                </div>
+
+                <div>
+                    <!-- Password -->
+                    <input type="password" id="mdp"  name="_password" placeholder="Mot de passe" class="checkout_input" onblur="mdpVerify()" >
+                    <p id="mdptext" class="ErrFah"></p>
+                </div>
+                <h6 >Créer un compte <a href="{{ path("inscription") }}" style="color:#ffbe27">Velo.tn</a></h6>
+                <div id="SeConnecter" ><button class="login_button trans_200"  type="submit">Login</button> </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

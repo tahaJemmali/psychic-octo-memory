@@ -1,0 +1,18 @@
+{% trans_default_domain 'FOSUserBundle' %}
+<div class="form-group">
+<style>
+    .fr
+    {
+        font-family: Arial, Helvetica, sans-serif;
+        color: #1b1e21;
+        font-size: large;
+    }
+
+</style>
+{{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
+  {{ form_widget(form,{ 'attr': {'class': 'fr'} }) }}
+    <div>
+        <input class="btn btn-primary" type="submit" value="{{ 'edit'|trans }}" />
+    </div>
+{{ form_end(form) }}
+</div>

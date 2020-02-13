@@ -1,0 +1,13 @@
+{% extends "front/autre/autre.html.twig" %}
+{% block titre %} Ajout d'un vélo a louer{% endblock %}
+
+{% block body %}
+    <div class="login" style="margin-right: 25%;margin-left: 37%;margin-top: 3%;margin-bottom: 3%;">
+        {{ form_start(form) }}
+        {{ form_label(form.dateDebut) }}: {{ form_widget(form.dateDebut) }}
+        {{ form_label(form.dateFin) }}: {{ form_widget(form.dateFin) }}
+        {{ form_label(form.etat) }}: {{ form_widget(form.etat) }}
+        <div style="margin-top: 10%;"align="">{{ form_widget(form.modifier) }}</div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

@@ -1,0 +1,41 @@
+location_homepage:
+    path:     /test
+    defaults: { _controller: LocationBundle:Default:index }
+displayVelo:
+    path:     /displayVelo
+    defaults: { _controller: LocationBundle:Velo:displayVelo }
+addVelo:
+    path:     /addVelo
+    defaults: { _controller: LocationBundle:Velo:addVelo }
+removeVelo:
+    path:     /removeVelo/{id}
+    defaults: { _controller: LocationBundle:Velo:removeVelo }
+updateVelo:
+    path:     /updateVelo/{id}
+    defaults: { _controller: LocationBundle:Velo:updateVelo }
+
+addLocation:
+    path:     /addLocation/{id}
+    defaults: { _controller: LocationBundle:Location:addLocation }
+
+displayLocation:
+    path:     /displayLocation
+    defaults: { _controller: LocationBundle:Location:displayLocation }
+
+modifierLocation:
+    path:     /updateLocation/{id}
+    defaults: { _controller: LocationBundle:Location:updateLocation }
+supprimerLocation:
+    path:     /removeLocation/{id}
+    defaults: { _controller: LocationBundle:Location:removeLocation }
+interfacevelo:
+    path:     /listforClient
+    defaults: { _controller: LocationBundle:Velo:ListforClient }
+displayfacture:
+    path:     /displayfacture
+    defaults: { _controller: LocationBundle:Velo:displayFacture }
+getFacture:
+    path:     /getfacture/{id}
+    defaults: {_controller: LocationBundle:Location:getFacture}
+
+

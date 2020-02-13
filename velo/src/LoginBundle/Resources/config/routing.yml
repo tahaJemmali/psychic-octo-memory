@@ -1,0 +1,3 @@
+Register:
+  path:     /register/
+  defaults: { _controller: LoginBundle:Registration:register }

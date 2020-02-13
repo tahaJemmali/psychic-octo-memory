@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<!-- Mirrored from escope.tn/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 01 Mar 2019 13:51:51 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vélo.tn</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="{{ asset("front/css/bootstrap.min.css") }}" rel="stylesheet">
+    <!-- CSS Custom -->
+    <link rel="stylesheet" type="text/css" href="{{ asset("front/css/style.css") }}">
+    <script async src="{{ asset("front/assets/slider/script.js") }}"></script>
+    <link rel="stylesheet" href="{{ asset("front/assets/slider/style.css") }}">
+
+    <!-- favicon Icon -->
+    <!--<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon">-->
+    <!-- CSS Plugins -->
+    <link href="{{ asset("front/css/font-awesome.min.css") }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset("front/css/animate.min.css") }}">
+    <link href="{{ asset("front/css/gallery.css") }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--== font-awesome ==-->
+
+    <!--== magnific-popup ==-->
+    <link href="{{ asset("front/assets/css/magnific-popup.css") }}" rel="stylesheet">
+
+    <!--== owl carousel ==-->
+    <link href="{{ asset("front/assets/css/owl.carousel.css") }}" rel="stylesheet">
+
+    <!--== animate css ==-->
+    <link href="{{ asset("front/assets/css/animate.min.css") }}" rel="stylesheet">
+
+    <!--== style css ==-->
+    <link href="{{ asset("front/assets/css/style.css") }}" rel="stylesheet">
+
+    <!--== responsive css ==-->
+    <link href="{{ asset("front/assets/css/responsive.css") }}" rel="stylesheet">
+
+    <!--== theme color css ==-->
+    <link href="{{ asset("front/assets/css/theme-color.css") }}" rel="stylesheet">
+
+    <script src="{{ asset("front/assets/js/jquery-2.1.4.min.js") }}"></script>
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body >
+
+
+<header class="navbar-fixed-top">
+    <div class="container">
+        <div class="row">
+            <div class="header_top">
+                <div class="col-md-2">
+                    <div class="logo_img">
+                        <img src="{{ asset("front/images/logo3.png") }}" id="myBtn" onclick="myFunction()"  alt="logoimage" width="100" height=auto style="margin-left: 50%;">
+                    </div>
+                </div>
+
+                <div class="col-md-10">
+                    <div class="menu_bar">
+                        <nav role="navigation" class="navbar navbar-default">
+                            <div class="navbar-header">
+                                <button id="menu_slide"  aria-controls="navbar" aria-expanded="false" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+
+                            <div class="collapse navbar-collapse" id="navbar">
+
+                                <ul class="nav navbar-nav">
+                                    <li><a href="#services" class="js-target-scroll">Acceuil</a></li>
+                                    <li><a href="#work" class="js-target-scroll">Les Événements</a></li>
+                                    <li><a href="#" class="js-target-scroll">Nos Produits</a></li>
+                                    <li><a href="#" class="js-target-scroll">Réparations</a></li>
+                                    <li><a href="#" class="js-target-scroll">locations </a></li>
+                                    <li><a href="#" class="js-target-scroll">Montage </a></li>
+                                    <li><a href="#" class="js-target-scroll">Forum </a></li>
+                                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                        <li><a href="{{ path("fos_user_profile_show") }}" ><img src="{{ asset(app.user.photo) }}" alt="https://www.flaticon.com/authors/freepik"	width="30px" height=auto style="background-color:white;" ></a></li>
+
+                                    {% else %}
+                                        <li><a href="{{ path("fos_user_security_login") }}" ><img src="{{ asset("front/images/user.svg") }}" alt="https://www.flaticon.com/authors/freepik"	width="30px" height=auto style="background-color:white;" ></a></li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+{% block body %}
+
+<style>
+    #myVideo {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+
+    div.transbox p {
+        color:white;
+        font-size: 22px;
+        margin: 5%;
+        margin: 10px 0;
+        padding: 5px;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .content {
+        position: fixed;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0);
+        color: #f1f1f1;
+        width: 100%;
+        padding: 20px;
+    }
+
+    #myBtn {
+        font-size: 18px;
+        padding: 10px;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    #myBtn:hover {
+        background: #fff;
+        color: black;
+    }
+</style>
+<video autoplay muted loop id="myVideo" >
+    <source src="{{ asset("front/images/Bike Build.mp4") }}" type="video/mp4">
+    Your browser does not support HTML5 video.
+</video>
+<script>
+    var video = document.getElementById("myVideo");
+    var btn = document.getElementById("myBtn");
+
+    function myFunction() {
+        if (video.paused) {
+            video.play();
+            btn.src = "{{ asset("front/images/logo3.png") }}";
+
+        } else {
+            video.pause();
+            btn.src = "{{ asset("front/images/play.png") }}";
+
+        }
+    }
+</script>
+
+
+
+<section id="services" >
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section_heading section_heading_2">
+                    <h2 style="color:#fec139" > Qui sommes-nous ?</h2>
+                </div>
+                <div class="col-md-12 transbox">
+                    <p>
+                        Velo.tn est une boutique en ligne qui vous permet de commander les derniers vélos et toutes sortes d'accessoires et de pièces de rechanges.
+                    </p>
+                    <br>
+                    <p>
+                        Nous offrons également un service de réparation 24/7 et un service de location à un prix alléchant!
+                    </p>
+                    <br>
+                    <p>
+                        Notre site Web vous donne également la possibilité de participer à différentes compétitions et de gagner de superbes récompenses.
+                    </p>
+                    <br>
+                    <p>
+                        voulez-vous personnaliser votre propre vélo? Velo.tn vous offre la possibilité de créer votre vélo de rêve!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section  id="work">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="section_heading">
+                    <h2 style="color:#fec139;"> Les Événements </h2>
+                    <h4 style="color:white"> Les événements récents, participer et gagner !</h4>
+                </div>
+                <div class="main-wrapper">
+                    <div class="slider" >
+                        <img class="slide slide_current" src="https://picsum.photos/1920/1080?random=1">
+                        <img class="slide" src="https://picsum.photos/1920/1080?random=2">
+                        <img class="slide" src="https://picsum.photos/1920/1080?random=3">
+                        <img class="slide" src="https://picsum.photos/1920/1080?random=4">
+                        <img class="slide" src="https://picsum.photos/1920/1080?random=5">
+                    </div>
+                    <div class="arrow arrow_prev">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 257.6 451.8">
+                            <path d="M0,225.9c0-8.1,3.1-16.2,9.3-22.4L203.5,9.3c12.4-12.4,32.4-12.4,44.8,0c12.4,12.4,12.4,32.4,0,44.7L76.4,225.9l171.9,171.9c12.4,12.4,12.4,32.4,0,44.7c-12.4,12.4-32.4,12.4-44.7,0L9.3,248.3C3.1,242.1,0,234,0,225.9z"/>
+                        </svg>
+                    </div>
+                    <div class="arrow arrow_next">
+                        <svg class="arrow arrow_next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 257.6 451.8">
+                            <path d="M248.3,248.3L54,442.6c-12.4,12.4-32.4,12.4-44.7,0c-12.4-12.4-12.4-32.4,0-44.7l171.9-171.9L9.3,54C-3.1,41.7-3.1,21.6,9.3,9.3C21.6-3.1,41.7-3.1,54,9.3l194.3,194.3c6.2,6.2,9.3,14.3,9.3,22.4C257.6,234,254.5,242.1,248.3,248.3z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="contact" >
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section_heading section_heading_2">
+                    <h2 style="color:#fec139"> Contact Us </h2>
+
+                    <h4>Let drop a line to us & we will be in touch soon.</h4>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="contact_form">
+                        <form action="http://escope.tn/Contact.php" method="post">
+                            <div class="form-group">
+                                <label >Full Name : <span> *</span></label>
+                                <input type="Text" class="form-control" id="" name="Name" >
+                            </div>
+
+                            <div class="form-group">
+                                <label >Email Address : <span> *</span></label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" name="Email">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Message <span> *</span></label>
+                                <textarea class="form-textarea" rows="3" name="Message"></textarea>
+                            </div>
+
+                            <div class="section_sub_btn">
+                                <button class="btn btn-default" type="submit" name="submit" onclick="swal()">  Send Message</button>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="contact_text">
+                        <ul>
+                            <li>
+                                <span><i class="fa fa-home" aria-hidden="true"></i></span>
+                                <h5>Z.I. Chotrana II B.P. 160، Pôle Technologique El Ghazela، Ariana 2088</h5>
+                            </li>
+
+                            <li>
+                                <span><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+                                <h5> info@velo.tn </h5>
+                            </li>
+
+                            <li>
+                                <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                                <h5 style="margin-left: 10px;"> +216 52	669	482 </h5>
+                            </li>
+
+
+
+                        </ul>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<footer >
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="footer_top">
+                    <h4> Social</h4>
+
+                    <ul>
+                        <li> <a href="https://www.facebook.com/EnactusEsprit/"> <i class="fa fa-facebook" aria-hidden="true"></i> </a> </li>
+                        <li> <a href="https://www.youtube.com/watch?v=yumediBtWLo"> <i class="fa fa-youtube-square" aria-hidden="true"></i> </a> </li>
+                        <li> <a href="https://www.instagram.com/enactusict/"> <i class="fa fa-instagram" aria-hidden="true"></i> </a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer_bottom fourth-bg">
+        <p> 2019 &copy; Copyright. All rights Reserved. Powered By WASP </p>
+    </div>
+</footer>
+
+<script src="{{ asset("front/js/jquery.min.js") }}"></script>
+<script src="{{ asset("front/js/bootstrap.min.js") }}"></script>
+<script src="{{ asset("front/js/interface.js") }}"></script>
+<script type="text/javascript" src="{{ asset("front/js/sweetalert.min.js") }}"></script>
+
+<script src="{{ asset("front/assets/js/plugins.js") }}"></script>
+
+<!--== typed js ==-->
+<script src="{{ asset("front/assets/js/typed.js") }}"></script>
+
+<!--== stellar js ==-->
+<script src="{{ asset("front/assets/js/jquery.stellar.min.js") }}"></script>
+
+<!--== counterup js ==-->
+<script src="{{ asset("front/assets/js/jquery.counterup.min.js") }}"></script>
+
+<!--== waypoints js ==-->
+<script src="{{ asset("front/assets/js/jquery.waypoints.min.js") }}"></script>
+
+<!--== wow js ==-->
+<script src="{{ asset("front/assets/js/wow.min.js") }}"></script>
+
+<!--== validator js ==-->
+<script src="{{ asset("front/assets/js/validator.min.js") }}"></script>
+
+<!--== mixitup js ==-->
+<script src="{{ asset("front/assets/js/jquery.mixitup.js") }}"></script>
+
+<!--== contact js ==-->
+<script src="{{ asset("front/assets/js/contact.js") }}"></script>
+
+<!--== main js ==-->
+<script src="{{ asset("front/assets/js/main.js") }}"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#menu_slide").click(function(){
+            $("#navbar").slideToggle('normal');
+        });
+    });
+</script>
+<!--Menu Js Right Menu-->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#navbar > ul > li:has(ul)').addClass("has-sub");
+        $('#navbar > ul > li > a').click(function() {
+            var checkElement = $(this).next();
+            $('#navbar li').removeClass('dropdown');
+            $(this).closest('li').addClass('dropdown');
+            if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+                $(this).closest('li').removeClass('dropdown');
+                checkElement.slideUp('normal');
+            }
+            if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+                $('#navbar ul ul:visible').slideUp('normal');
+                checkElement.slideDown('normal');
+            }
+            if (checkElement.is('ul')) {
+                return false;
+            } else {
+                return true;
+            }
+        });
+    });
+    <!--end-->
+</script>
+<script type="text/javascript">
+    $("#navbar").on("click", function(event){
+        event.stopPropagation();
+    });
+    $(".dropdown-menu").on("click", function(event){
+        event.stopPropagation();
+    });
+    $(document).on("click", function(event){
+        $(".dropdown-menu").slideUp('normal');
+    });
+
+    $(".navbar-header").on("click", function(event){
+        event.stopPropagation();
+    });
+    $(document).on("click", function(event){
+        $("#navbar").slideUp('normal');
+    });
+</script>
+
+<script src="{{ asset("front/ajax/jquery-1.11.0.min.html") }}"></script>
+<script src="{{ asset("front/scripts/pyaari-main.1.0.js") }}"></script>
+<script src="{{ asset("front/scripts/pyaari-menu.1.0.js") }}"></script>
+<script>
+    $(document).ready(function () {
+        PfdMenu._ctor();
+    });
+</script>
+
+
+<script>
+    $(document).ready(function(){
+        ReadMore.init();
+    })
+</script>
+{% endblock %}
+</body>
+<!-- JS Plugins -->
+
+<!-- Mirrored from escope.tn/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 01 Mar 2019 13:59:56 GMT -->
+</html>

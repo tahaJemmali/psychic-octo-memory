@@ -13,7 +13,9 @@ class DefaultController extends Controller
     public function indexAction()
     {
         // replace this example code with whatever you need
-        return $this->render('front/index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $evenements = $em->getRepository('EventBundle:Evenement')->findAll();
+        return $this->render('front/index.html.twig', compact("evenements"));
     }
     /**
      * @Route("/rederict", name="redirection")

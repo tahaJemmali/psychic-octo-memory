@@ -1,0 +1,26 @@
+list_evenement_front:
+    path:     /
+    defaults: { _controller: "EventBundle:Evenement:index" }
+    methods:  GET
+
+
+evenement_show:
+    path:     /{id}/show
+    defaults: { _controller: "EventBundle:Evenement:show" }
+    methods:  GET
+
+
+particper:
+    path:   /inviter/{id_event}/{id_user}
+    defaults: { _controller: EventBundle:Evenement:particper }
+    methods:  GET
+
+annuler:
+    path:   /annuler/{id_event}/{id_user}
+    defaults: { _controller: EventBundle:Evenement:annuler }
+    methods:  GET
+
+score:
+    path:   /score/{id}
+    defaults: { _controller: EventBundle:Evenement:score }
+

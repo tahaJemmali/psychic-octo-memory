@@ -1,0 +1,97 @@
+{% if events %}
+<style>
+    img{
+        border-radius: 5%;
+    }
+    h3,p{
+        color: whitesmoke;
+    }
+
+    span{
+        color:yellow ;
+        font-weight: bold;
+        font-family: cursive;
+    }
+</style>
+<br />
+{% set array=[] %}
+<h2 align="center">Les événements auquel vous participerez </h2>
+{% set len = events|length %}
+<div id="rr" class="carousel slide" data-ride="carousel">
+    <ul class="carousel-indicators">
+        {% for i in 0..(len-1) %}
+            <li data-target="#rr" data-slide-to="{{ i }}" {% if i==0 %}class="active"{% endif %}></li>
+        {% endfor %}
+    </ul>
+    <div class="carousel-inner">
+        {% set i = 0 %}
+        {% for trophet in events %}
+            {% set datePost = trophet.date_debut|date() %}
+
+            {% set array = array|merge([datePost]) %}
+                <div class="carousel-item{% if i==0 %} active{% endif %}">
+                    <img src="{{  asset(trophet.image) }}" alt="{{ trophet.titre }}" width="400" height="200">
+                    <div class="carousel-caption">
+                        <h3>{{ trophet.titre }}</h3>
+                        <p>{{ trophet.description }}</p>
+
+                        <div class="date" >
+                            <p><span  id="days{{ i }}"></span> Days
+                                <span id="hours{{ i }}"></span> Hours
+                                <span id="minutes{{ i }}"></span> Minutes
+                                <span id="seconds{{ i }}"></span> Seconds</p>
+                        </div>
+                        <div class="module cap">
+                            <div id="MyDiv{{ i }}">
+                                {% if app.user %}
+                                    <a  id="annuler{{ i }}"   href="{{ path('annuler', { 'id_event': trophet.id ,'id_user': app.user.id }) }}" style="background:white;font-size: 20px;color: red;text-decoration: underline;">Annuler</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                {% set i = i + 1 %}
+        {% endfor %}
+    </div>
+</div>
+<br />
+<script>        const second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
+
+
+    {% for i in 0..(len-1) %}
+    x = setInterval(function() {
+        let now = new Date().getTime();
+
+        let countDown{{ i }} = new Date('{{ array[i] }}').getTime();
+        distance = countDown{{ i }} - now;
+        if(distance <0)
+        {
+            document.getElementById("MyDiv{{ i }}").innerHTML = "";
+            document.getElementById('days{{ i }}').innerText = "D",
+                document.getElementById('hours{{ i }}').innerText = "O",
+                document.getElementById('minutes{{ i }}').innerText = "N",
+                document.getElementById('seconds{{ i }}').innerText = "E";
+        }
+        else
+        {
+            document.getElementById('days{{ i }}').innerText = Math.floor(distance / (day)),
+                document.getElementById('hours{{ i }}').innerText = Math.floor((distance % (day)) / (hour)),
+                document.getElementById('minutes{{ i }}').innerText = Math.floor((distance % (hour)) / (minute)),
+                document.getElementById('seconds{{ i }}').innerText = Math.floor((distance % (minute)) / second);
+        }
+
+
+
+    }, second);
+    {% endfor %}
+
+</script>
+{% else %}
+    <br />
+    <h4 align="center">Vous ne particpez à aucun évenement</h4>
+    <br />
+{% endif %}

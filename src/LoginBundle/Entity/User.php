@@ -2,12 +2,14 @@
 
 namespace LoginBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use EventBundle\Entity\Evenement;
 use FOS\UserBundle\Model\User as BaseUser;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="LoginBundle\Repository\UserRepository")
  * @ORM\Table(name="user")
  */
 class User extends BaseUser
@@ -45,12 +47,22 @@ class User extends BaseUser
      */
     protected  $pts_fidelite;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="EventBundle\Entity\Evenement", mappedBy="users")
+     */
+    private $events;
 
     public function __construct()
     {
-        parent::__construct();
-        // your own logic
+        $this->events = new ArrayCollection();
     }
+
+    public function addEvents(Evenement $event)
+    {
+        $this->events[]=$event;
+    }
+
+
 
     /**
      * @return mixed

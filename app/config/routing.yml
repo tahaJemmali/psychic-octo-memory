@@ -8,3 +8,7 @@ app:
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+event:
+    resource: "@EventBundle/Resources/config/routing.yml"
+    prefix:   /

@@ -7,7 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vélo.tn</title>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <!-- Bootstrap CSS -->
     <link href="{{ asset("front/css/bootstrap.min.css") }}" rel="stylesheet">
     <!-- CSS Custom -->
@@ -86,7 +88,7 @@
 
                                 <ul class="nav navbar-nav">
                                     <li><a href="#services" class="js-target-scroll">Acceuil</a></li>
-                                    <li><a href="#work" class="js-target-scroll">Les Événements</a></li>
+                                    <li><a href="{{ path("list_evenement_front") }}" class="js-target-scroll">Les Événements</a></li>
                                     <li><a href="#" class="js-target-scroll">Nos Produits</a></li>
                                     <li><a href="#" class="js-target-scroll">Réparations</a></li>
                                     <li><a href="#" class="js-target-scroll">locations </a></li>
@@ -204,23 +206,19 @@
     </div>
 </section>
 
-
-<section  id="work">
+<section>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-
                 <div class="section_heading">
                     <h2 style="color:#fec139;"> Les Événements </h2>
                     <h4 style="color:white"> Les événements récents, participer et gagner !</h4>
                 </div>
                 <div class="main-wrapper">
                     <div class="slider" >
-                        <img class="slide slide_current" src="https://picsum.photos/1920/1080?random=1">
-                        <img class="slide" src="https://picsum.photos/1920/1080?random=2">
-                        <img class="slide" src="https://picsum.photos/1920/1080?random=3">
-                        <img class="slide" src="https://picsum.photos/1920/1080?random=4">
-                        <img class="slide" src="https://picsum.photos/1920/1080?random=5">
+                        {% for evenement in evenements %}
+                          <img class="slide"  src="{{ asset(evenement.image) }}">
+                        {% endfor %}
                     </div>
                     <div class="arrow arrow_prev">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 257.6 451.8">
@@ -234,11 +232,9 @@
                     </div>
                 </div>
             </div>
-
         </div>
-
+        <h1><a style="margin-left: 35%;color: #fec139;" href="{{ path("list_evenement_front") }}">Participer !</a></h1>
     </div>
-
 </section>
 
 <section id="contact" >
@@ -284,25 +280,17 @@
                                 <span><i class="fa fa-home" aria-hidden="true"></i></span>
                                 <h5>Z.I. Chotrana II B.P. 160، Pôle Technologique El Ghazela، Ariana 2088</h5>
                             </li>
-
                             <li>
                                 <span><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
                                 <h5> info@velo.tn </h5>
                             </li>
-
                             <li>
                                 <span><i class="fa fa-phone" aria-hidden="true"></i></span>
                                 <h5 style="margin-left: 10px;"> +216 52	669	482 </h5>
                             </li>
-
-
-
                         </ul>
-
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>
@@ -318,9 +306,9 @@
                     <h4> Social</h4>
 
                     <ul>
-                        <li> <a href="https://www.facebook.com/EnactusEsprit/"> <i class="fa fa-facebook" aria-hidden="true"></i> </a> </li>
-                        <li> <a href="https://www.youtube.com/watch?v=yumediBtWLo"> <i class="fa fa-youtube-square" aria-hidden="true"></i> </a> </li>
-                        <li> <a href="https://www.instagram.com/enactusict/"> <i class="fa fa-instagram" aria-hidden="true"></i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-facebook" aria-hidden="true"></i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-youtube-square" aria-hidden="true"></i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-instagram" aria-hidden="true"></i> </a> </li>
                     </ul>
                 </div>
             </div>

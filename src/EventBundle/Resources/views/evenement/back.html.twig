@@ -1,0 +1,128 @@
+{% extends "back/index.html.twig" %}
+    {% block title %}Consulter Evenement{% endblock %}
+{% block body %}
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% set i = 0 %}
+    {% set array = [] %}
+    {% set ids = [] %}
+    <div class="col-xl-8">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="box-title">Evenements list </h4>
+                <a class="btn btn-outline-success btn-sm" href="{{ path('add_evenement') }}">Tri</a>
+            </div>
+            <a class="btn btn-outline-success btn-sm" href="{{ path('add_evenement') }}">Ajouter</a>
+            {% if evenements %}
+            <div class="card-body--">
+                <div class="table-stats order-table ov-h">
+                    <table class="table ">
+                        <thead>
+                        <tr>
+                            <th class="avatar">Avatar</th>
+                            <th class="serial">Id</th>
+                            <th>Titre</th>
+                            <th>Description</th>
+                            <th>Date debut</th>
+                            <th>Date creation</th>
+                            <th>Max participant</th>
+                            <th>Localisation</th>
+                            <th align="center">score</th>
+                            <th align="center">Particpant</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        {% for evenement in evenements %}
+                            {% set datePost = evenement.dateDebut|date() %}
+                            {% set array = array|merge([datePost]) %}
+                            {% set ids = ids|merge([evenement.id]) %}
+                            {% set len = users|length %}
+                        <tr>
+                            <td class="avatar">
+                                <div class="round-img">
+                                    <a href="#"><img class="rounded-circle" src="{{ asset(evenement.image) }}" alt=""></a>
+                                </div>
+                            </td>
+                            <td class="serial"> #{{ evenement.id }} </td>
+                            <td>  <span class="name">{{ evenement.titre }}</span> </td>
+                            <td> <span class="product">{{ evenement.description }}</span> </td>
+                            <td>{% if evenement.dateDebut %}{{ evenement.dateDebut|date('Y-m-d') }}{% endif %}</td>
+                            <td>{% if evenement.dateCreation %}{{ evenement.dateCreation|date('Y-m-d') }}{% endif %}</td>
+                            <td><span class="count">{{ evenement.maxParticipant }}</span></td>
+                            <td>
+                                <span class="badge badge-complete">{{ evenement.localisation }}</span>
+                            </td>
+                            <td>
+                                {% if evenement.score is not null %}
+                                    <div align="center" style="border: 2px solid red;border-radius: 12px;">
+                                    First: <span class="count">    {{ evenement.score.first }}</span>
+                                    Secound:<span class="count"> {{ evenement.score.secound }}</span>
+                                    Third:<span class="count">      {{ evenement.score.third }}</span>
+                                    </div>
+                                {% endif %}
+                            </td>
+                            {% set var=0 %}
+                            <td>  {% for par in particpant %}
+                                {% if evenement.id == par.event_id %}
+                                    {% set len = len-1 %}
+                                    {% set var=var+1 %}
+                                <div align="center" style="border: 2px solid red;border-radius: 12px;">
+                                        Id_user <span class="count">    {{ par.user_id }}</span>
+                                </div>
+                                {% endif %}
+                                {% endfor %}
+                            </td>
+                            <td>
+
+                                <div id="MyDiv{{ i }}">
+
+                                        <a class="btn btn-outline-primary btn-sm" href="{{ path('edit_evenement', { 'id': evenement.id }) }}">Modifier</a>
+
+                                {% if len>0 and var<evenement.maxParticipant %}
+                                        <a class="btn btn-outline-warning btn-sm" href="{{ path('inviter', { 'id': evenement.id }) }}">inviter</a>
+                                    {% else %}
+                                        <div class="alert alert-danger" role="alert">
+                                            Vous ne pouvez plus inviter
+                                        </div>
+                                {% endif %}
+                                </div>
+                                <a class="btn btn-outline-danger btn-sm" href="{{ path('delete_evenement', { 'id': evenement.id }) }}">Supprimer</a>
+                            </td>
+                        </tr>
+                            {% set i = i + 1 %}
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div> <!-- /.table-stats -->
+            </div>
+        </div> <!-- /.card -->
+    </div>  <!-- /.col-lg-8 -->
+
+    <script>
+        const second = 1000,
+            minute = second * 60,
+            hour = minute * 60,
+            day = hour * 24;
+
+        {% set len = evenements|length %}
+        {% for i in 0..(len-1) %}
+        x = setInterval(function() {
+            let now = new Date().getTime();
+
+            let countDown{{ i }} = new Date('{{ array[i] }}').getTime();
+            distance =countDown{{ i }} -now;
+            if(distance <0)
+            {
+                document.getElementById("MyDiv{{ i }}").innerHTML = " <a class=\"btn btn-outline-success btn-sm\" href=\"{{ path('score', { 'id': ids[i] }) }}\">Attribuer les scores</a>";
+            }
+        }, second);
+        {% endfor %}
+
+    </script>
+    {% endif %}
+{% endblock %}

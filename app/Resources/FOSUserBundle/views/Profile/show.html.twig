@@ -2,4 +2,9 @@
 
 {% block fos_user_content %}
 {% include "@FOSUser/Profile/show_content.html.twig" %}
+    <div class="alert alert-warning" role="alert">
+        Si vous vous trouvez participer à un évenement qui vous est inconnu c'est probablement l'admin qui vous a inviter
+    </div>
+    {% include "@Event/evenement/participer.html.twig" %}
+    {% include "@Event/trophet/display.html.twig" %}
 {% endblock fos_user_content %}

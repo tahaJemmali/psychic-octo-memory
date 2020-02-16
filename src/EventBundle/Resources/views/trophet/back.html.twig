@@ -1,0 +1,51 @@
+{% extends "back/index.html.twig" %}
+    {% block title %}Consulter Trophet{% endblock %}
+{% block body %}
+
+    <div class="col-xl-8">
+
+        <div class="card">
+            <div class="card-body">
+                <h4 class="box-title">Trophet list </h4>
+                <a class="btn btn-outline-success btn-sm" href="{{ path('add_trophet') }}">Tri</a>
+            </div>
+            <a class="btn btn-outline-success btn-sm" href="{{ path('add_trophet') }}">Ajouter</a>
+            <div class="card-body--">
+                <div class="table-stats order-table ov-h">
+                    <table class="table ">
+                        <thead>
+                        <tr>
+                            <th class="avatar">Image</th>
+                            <th class="serial">Id</th>
+                            <th>Nom</th>
+                            <th>Description</th>
+                            <th>Score acquis</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for trophet in trophets %}
+                            <tr>
+                                <td class="avatar">
+                                    <div class="round-img">
+                                        <a href="#"><img class="rounded-circle" src="{{ asset(trophet.image) }}" alt=""></a>
+                                    </div>
+                                </td>
+                                <td class="serial"> #{{ trophet.id }} </td>
+                                <td>  <span class="name">{{ trophet.nom }}</span> </td>
+                                <td> <span class="product">{{ trophet.description }}</span> </td>
+                                <td><span class="count">{{ trophet.targetscore }}</span></td>
+                                <td>
+                                    <a class="btn btn-outline-primary btn-sm" href="{{ path('edit_trophet', { 'id': trophet.id }) }}">Modifier</a>
+                                    <a class="btn btn-outline-danger btn-sm" href="{{ path('delete_trophet', { 'id': trophet.id }) }}">Supprimer</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div> <!-- /.table-stats -->
+            </div>
+        </div> <!-- /.card -->
+    </div>  <!-- /.col-lg-8 -->
+
+{% endblock %}

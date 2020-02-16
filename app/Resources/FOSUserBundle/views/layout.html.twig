@@ -1,5 +1,11 @@
 {% extends "front/autre/autre.html.twig" %}
 {% block titre %}Connexion{% endblock %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{{ asset("autre/styles/bootstrap-4.1.2/bootstrap.min.css") }}">
+    <link href="{{ asset("autre/plugins/font-awesome-4.7.0/css/font-awesome.min.css") }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{ asset("autre/styles/inscri-login.css") }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset("autre/styles/checkout_responsive.css") }}">
+{% endblock %}
 {% block body %}
     <div class="login">
         <div class="form_login">

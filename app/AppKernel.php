@@ -21,6 +21,9 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new ECommerceBundle\ECommerceBundle(),
             new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
+            new EventBundle\EventBundle(),
+            new Skies\QRcodeBundle\SkiesQRcodeBundle(),
+            new ForumBundle\ForumBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

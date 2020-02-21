@@ -1,0 +1,6 @@
+mailQR_invitation:
+  path:     /{id}
+  defaults: { _controller: EventBundle:Qr:mail }
+  methods:  GET
+
+

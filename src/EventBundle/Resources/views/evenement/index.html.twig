@@ -1,0 +1,214 @@
+{% extends "front/autre/autre.html.twig" %}
+{% block title %}Evenements{% endblock %}
+{% block titre %}Evenements{% endblock %}
+{% block hamburger %}
+    <link rel='stylesheet' type='text/css' media='screen' href='{{ asset("front/main.css") }}'>
+    <div id="nav-icon3" onclick="
+    if(document.getElementById('leaderboard').style.visibility == 'hidden')
+        {
+            document.getElementById('leaderboard').style.visibility = 'visible';
+        }
+    else
+        {
+            document.getElementById('leaderboard').style.visibility = 'hidden';
+        }
+">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+{% endblock %}
+{% block body %}
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% if evenements %}
+    {#Ranking#}
+    <link rel='stylesheet' type='text/css' media='screen' href='{{ asset("taha/rank/main.css") }}'>
+    <div class="leaderboard" id="leaderboard"  style="  position: fixed;z-index: 1;right: 0;visibility: hidden;">
+
+        <div class="leaderboard-text"><h2>Classment</h2></div>
+        {% set counter = 20 %}
+        {% for user in bests %}
+            {% if counter== 20 %}
+                <div style="margin-top: {{ counter }}%;" class="first"><p class="value">{{ user.username }} <span>{{ user.score }}</span></p><img src="{{ asset(user.photo) }}" alt="Avatar" class="avatar"></div>
+            {% endif %}
+            {% if counter== 40 %}
+                <div style="margin-top: {{ counter }}%;" class="secound"><p class="value">{{ user.username }} <span>{{ user.score }}</span></p><img src="{{ asset(user.photo) }}" alt="Avatar" class="avatar"></div>
+            {% endif %}
+            {% if counter== 60 %}
+                <div style="margin-top: {{ counter }}%;" class="third"><p class="value">{{ user.username }} <span>{{ user.score }}</span></p><img src="{{ asset(user.photo) }}" alt="Avatar" class="avatar"></div>
+            {% endif %}
+            {% if counter > 60 %}
+                <div style="margin-top: {{ counter }}%;" class="default"><p class="value">{{ user.username }} <span>{{ user.score }}</span></p><img src="{{ asset(user.photo) }}" alt="Avatar" class="avatar"></div>
+            {% endif %}
+            {% set counter = counter + 20 %}
+        {% endfor %}
+    </div>
+    {#    end Ranking#}
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+
+    <div style="margin-left: 28%">
+        {% set len = evenements|length %}
+
+        <div id="myCarousel" class="carousel slide" style="width: 1800px;margin-left: -500px" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+            {% for i in 0..(len-1) %}
+                <li data-target="#myCarousel" data-slide-to="{{ i }}" {% if i==0 %}class="active"{% endif %}></li>
+            {% endfor %}
+
+            </ol>
+            {% set datePost = "now"|date() %}
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                {% set i = 0 %}
+                {% set array = [] %}
+                {% for evenement in evenements %}
+                    {% set datePost = evenement.dateDebut|date() %}
+                    {% set array = array|merge([datePost]) %}
+
+                <div class="item {% if i==0 %}active{% endif %}">
+                    <div class="carousel-caption d-none d-md-block">
+                        <div class="module top">
+                            <h2>{{ evenement.titre }}</h2>
+                            <div class="date">
+                                <p><span id="days{{ i }}"></span> Days
+                                <span id="hours{{ i }}"></span> Hours
+                                <span id="minutes{{ i }}"></span> Minutes
+                                <span id="seconds{{ i }}"></span> Seconds</p>
+                            </div>
+                        </div>
+<br />
+                        <div class="module mid">
+                            <h2>{{ evenement.description }}</h2>
+                        </div>
+
+                        <br style="clear: both;">
+
+                        <div class="module cap">
+                            <div id="MyDiv{{ i }}">
+                                {% if app.user %}
+                            <a  id="particper{{ i }}" onclick="test({{ i }},{{ evenement.id }})" href="{{ path('particper', { 'id_event': evenement.id ,'id_user': app.user.id }) }}" style="font-size: 30px;color: #ffc107;text-decoration: underline;">Participer</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="module cap">
+                            <div id="MyDiv{{ i }}">
+                                {% if app.user %}
+                                    <a  id="annuler{{ i }}"   href="{{ path('annuler', { 'id_event': evenement.id ,'id_user': app.user.id }) }}" style="font-size: 30px;color: red;text-decoration: underline;visibility: hidden;">Annuler</a>
+                                    {% endif %}
+                            </div>
+                        </div>
+
+                    </div>
+                    <img src="{{ asset(evenement.image) }}" alt="Chicago" style="height:600px;width: 100%">
+
+                </div>
+                    {% set i = i + 1 %}
+                {% endfor %}
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <script src="{{ asset('front/jquery-3.4.1.min.js') }}"></script>
+    <script>
+
+        function   test(a,id)
+     {
+         var x=[];
+         var y=[];
+         {% set n=particpant|length %}
+         {% set i=0 %}
+         {% for par in particpant %}
+         x[{{ i }}]={{ par.user_id }};
+         y[{{ i }}]={{ par.event_id }};
+         {% set i=i+1 %}
+         {% endfor %}
+         var test=false;
+         for (let i = 0; i < {{ n }}; i++) {
+             if (x[i] == {{ app.user.id }}  )
+             {
+                if (y[i]==id){
+                     console.log("user:"+x[i]+" "+{{ app.user.id }});
+                    console.log("event:"+y[i]+" "+id);
+                     test=true;
+                 }
+
+             }
+         }
+         if (test)
+         {
+             document.getElementById("particper"+a ).removeAttribute("href");
+             // document.getElementById("particper"+a).style.color = "green";
+             //  document.getElementById("particper"+a).style.fontSize = "52px";
+             // document.getElementById("particper"+a).innerHTML="Vous particper";
+             document.getElementById("annuler"+a).style.visibility = 'visible';
+             document.getElementById("particper"+a).style.visibility = 'hidden';
+             alert("vous participer déja");
+         }
+
+     }
+
+
+
+        $(document).ready(function(){
+            $('#nav-icon1,#nav-icon2,#nav-icon3,#nav-icon4').click(function(){
+                $(this).toggleClass('open');
+            });
+        });
+
+        const second = 1000,
+            minute = second * 60,
+            hour = minute * 60,
+            day = hour * 24;
+
+
+        {% for i in 0..(len-1) %}
+            x = setInterval(function() {
+                let now = new Date().getTime();
+
+                let countDown{{ i }} = new Date('{{ array[i] }}').getTime();
+                distance = countDown{{ i }} - now;
+if(distance <0)
+{
+    document.getElementById("MyDiv{{ i }}").innerHTML = "";
+    document.getElementById('days{{ i }}').innerText = "D",
+        document.getElementById('hours{{ i }}').innerText = "O",
+        document.getElementById('minutes{{ i }}').innerText = "N",
+        document.getElementById('seconds{{ i }}').innerText = "E";
+}
+else
+{
+    document.getElementById('days{{ i }}').innerText = Math.floor(distance / (day)),
+        document.getElementById('hours{{ i }}').innerText = Math.floor((distance % (day)) / (hour)),
+        document.getElementById('minutes{{ i }}').innerText = Math.floor((distance % (hour)) / (minute)),
+        document.getElementById('seconds{{ i }}').innerText = Math.floor((distance % (minute)) / second);
+}
+
+
+
+            }, second);
+        {% endfor %}
+
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    {% endif %}
+{% endblock %}

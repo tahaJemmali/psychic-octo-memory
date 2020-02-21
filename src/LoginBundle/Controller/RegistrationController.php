@@ -40,7 +40,7 @@ class RegistrationController extends BaseController
      * @return Response
      */
     public function registerAction(Request $request)
-    {   //die();
+    {
 
         /** @var $formFactory FactoryInterface */
         $formFactory = $this->get('fos_user.registration.form.factory');
@@ -85,6 +85,8 @@ class RegistrationController extends BaseController
 
                 }
                 $user->setPhoto($TargetPath);
+                $user->setScore(0);
+                $user->setPtsFidelite(0);
 
                 $userManager->updateUser($user);
 
@@ -107,6 +109,8 @@ class RegistrationController extends BaseController
                 return $response;
             }
         }
+
+
 
         return $this->render('@FOSUser/Registration/register.html.twig', array(
             'form' => $form->createView(),

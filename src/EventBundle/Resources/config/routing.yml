@@ -1,0 +1,44 @@
+event_evenement:
+    resource: "@EventBundle/Resources/config/routing/evenement.yml"
+    prefix:   /evenement
+
+mail)qr:
+    resource: "@EventBundle/Resources/config/routing/mailQr.yml"
+    prefix:   /mailQR
+
+add_evenement:
+    path:   /admin/add_evenement
+    defaults: { _controller: EventBundle:Evenement:add }
+
+list_evenement_back:
+    path:   /admin/evenements
+    defaults: { _controller: EventBundle:Evenement:showback }
+
+delete_evenement:
+    path:     /admin/evenement_delete/{id}
+    defaults: { _controller: EventBundle:Evenement:delete }
+
+edit_evenement:
+    path:   /admin/evenements/{id}
+    defaults: { _controller: EventBundle:Evenement:edit }
+inviter:
+    path:   /admin/evenements/inviter/{id}
+    defaults: { _controller: EventBundle:Evenement:inviter }
+
+add_trophet:
+    path:   /admin/add_trophet
+    defaults: { _controller: EventBundle:Trophet:add }
+
+list_trophet_back:
+    path:   /admin/trophets
+    defaults: { _controller: EventBundle:Trophet:showback }
+
+delete_trophet:
+    path:     /admin/trophets/{id}
+    defaults: { _controller: EventBundle:Trophet:delete }
+
+edit_trophet:
+    path:   /admin/edit_trophets/{id}
+    defaults: { _controller: EventBundle:Trophet:edit }
+
+

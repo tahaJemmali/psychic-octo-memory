@@ -50,5 +50,9 @@
     <p >{{ 'Votre email'|trans }}: {{ user.email }}</p>
     <h6>Edit <a href="{{ path("fos_user_profile_edit") }}" style="color:#ffbe27">profile</a></h6>
     <h6> <a href="{{ path("fos_user_profile_commande") }}" style="color:#ffbe27">Mes Commandes</a></h6>
+    <h3 style="color: black">{{ 'Bienvenue'|trans }}: {{ user.username }}</h3>
+    <p style="color: black">{{ 'Votre email'|trans }}: {{ user.email }}</p>
+    <p style="color: black">{{ 'Votre score'|trans }}: {{ user.score }}</p>
+    <h6>Edit <a href="{{ path("fos_user_profile_edit") }}" style="color:#ffbe27">profile</a></h6>
 
 </div>

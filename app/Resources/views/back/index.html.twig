@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>velo.tn Dashboard</title>
+    <title>{% block title %}velo.tn Dashboard{% endblock %}</title>
     <meta name="description" content="vélo.tn Dashboard">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
@@ -44,6 +44,7 @@
                     </ul>
                 </li>
                 </li>
+
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-shopping-cart"></i>Commandes</a>
                     <ul class="sub-menu children dropdown-menu">
@@ -58,6 +59,10 @@
                         <li><i class="menu-icon fa fa-eye"></i><a href="#">Consulter</a></li>
                         <li><i class="menu-icon fa fa-plus-circle"></i><a href="#">Ajouter</a></li>
 
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Competition </a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="menu-icon fa fa-etsy"></i><a href="{{ path("list_evenement_back") }}">Événements</a></li>
+                        <li><i class="menu-icon fa fa-child"></i><a href="{{ path("list_trophet_back") }}">Trophet</a></li>
                     </ul>
                 </li>
 
@@ -700,6 +705,8 @@
     </div>
     <!-- /.content -->
     {% endblock %}
+</div>
+
     <div class="clearfix"></div>
     <!-- Footer -->
     <footer class="site-footer">
@@ -716,6 +723,7 @@
     </footer>
     <!-- /.site-footer -->
 </div>
+
 <!-- /#right-panel -->
 
 <!-- Scripts -->

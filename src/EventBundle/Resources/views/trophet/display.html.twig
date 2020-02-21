@@ -1,0 +1,35 @@
+<style>
+    img{
+        border-radius: 5%;
+    }
+    h3,p{
+        color: whitesmoke;
+    }
+</style>
+<br />
+<h2 align="center">Les Trophets Acquis</h2>
+{% set len = trophets|length %}
+<div id="demo" class="carousel slide" data-ride="carousel">
+    <ul class="carousel-indicators">
+        {% for i in 0..(len-1) %}
+        <li data-target="#demo" data-slide-to="{{ i }}" {% if i==0 %}class="active"{% endif %}></li>
+        {% endfor %}
+    </ul>
+    <div class="carousel-inner">
+        {% set i = 0 %}
+        {% for trophet in trophets %}
+            {% if trophet.targetscore <= user.score %}
+        <div class="carousel-item{% if i==0 %} active{% endif %}">
+            <img src="{{  asset(trophet.image) }}" alt="{{ trophet.nom }}" width="400" height="200">
+            <div class="carousel-caption">
+                <h3>{{ trophet.nom }}</h3>
+                <p>{{ trophet.description }}</p>
+            </div>
+        </div>
+    {% set i = i + 1 %}
+            {% endif %}
+    {% endfor %}
+    </div>
+</div>
+<br />
+<h4 align="center">Vous avez : {{ i }} trophets sur {{ len }} disponibles</h4>

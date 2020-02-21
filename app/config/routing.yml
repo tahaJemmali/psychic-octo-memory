@@ -1,3 +1,7 @@
+forum:
+    resource: "@ForumBundle/Resources/config/routing.yml"
+    prefix:   /
+
 login:
     resource: "@LoginBundle/Resources/config/routing.yml"
     prefix:   /
@@ -11,4 +15,7 @@ fos_user:
 
 e_commerce:
     resource: "@ECommerceBundle/Resources/config/routing.yml"
+    prefix:   /
+event:
+    resource: "@EventBundle/Resources/config/routing.yml"
     prefix:   /

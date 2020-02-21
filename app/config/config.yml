@@ -4,6 +4,8 @@ imports:
     - { resource: services.yml }
     - { resource: "@LoginBundle/Resources/config/services.yml" }
     - { resource: "@ECommerceBundle/Resources/config/services.yml" }
+    - { resource: "@EventBundle/Resources/config/services.yml" }
+    - { resource: "@ForumBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -82,7 +84,12 @@ swiftmailer:
     host: '%mailer_host%'
     username: VeloEcommerceSite@gmail.com
     password: VeloEcommerce123
-    spool: { type: memory }
+    transport: "%mailer_transport%"
+    host:      "%mailer_host%"
+    username:  "%mailer_user%"
+    password:  "%mailer_password%"
+    encryption: "%mailer_encryption%"
+        spool: { type: memory }
 
 sensio_framework_extra:
    router:

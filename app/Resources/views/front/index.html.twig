@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vélo.tn</title>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -88,6 +89,9 @@
 
                                 <ul class="nav navbar-nav">
                                     <li><a href="#services" class="js-target-scroll">Acceuil</a></li>
+                                    <li><a href="#work" class="js-target-scroll">Les Événements</a></li>
+                                    {#<li><a href="#" class="js-target-scroll">Nos Produits</a></li>#}
+                                    <li><a href="#produit" class="js-target-scroll">Nos Produits</a></li>{##}
                                     <li><a href="{{ path("list_evenement_front") }}" class="js-target-scroll">Les Événements</a></li>
                                     <li><a href="#" class="js-target-scroll">Nos Produits</a></li>
                                     <li><a href="#" class="js-target-scroll">Réparations</a></li>
@@ -206,6 +210,12 @@
     </div>
 </section>
 
+
+<section  id="work">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
 <section>
     <div class="container">
         <div class="row">
@@ -232,6 +242,55 @@
                     </div>
                 </div>
             </div>
+
+        </div>
+
+    </div>
+
+</section>
+    {#start section#}
+    <section id="produit">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="section_heading">
+                        <h2 style="color:#fec139;"> Nos Produits </h2>
+                        <h4 style="color:white">Espaces d'achats des produits et des accessoires</h4>
+
+                    </div>
+
+                    <div style="margin-left: 7% ">
+                        <div class="containerImage">
+                            <a href="{{ path("List_Product_Front",{'category':"Velo"}) }}"> <img src="{{ asset('VTN/bike.jpg') }}"style="width: 500px;height: 230px;" alt="pdr" class="image">
+                                <div class="overlayImage">
+                                    <div class="textImage">Nos Velos{#<p>Un accessoire pour Microscope  </p> #}</div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="containerImage">
+                            <a href="{{ path("List_Product_Front",{'category':"Piece de rechange"}) }}"> <img src="{{ asset('VTN/bhc.png') }}" alt="Avatar" class="image" style="width: 500px;height: 230px;">
+                            <div class="overlayImage">
+                                <div class="textImage">Nos Pièces de rechange</div>
+                            </div>
+                            </a>
+                        </div>
+
+                        <div class="containerImage">
+                            <a href="{{ path("List_Product_Front",{'category':"Accessoire"}) }}"> <img src="{{ asset('VTN/accessoire.jpg') }}" alt="Avatar" style="width: 500px;height: 230px;" class="image" >
+                            <div class="overlayImage">
+                                <div class="textImage">Nos Accessoires</div>
+                            </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{#end section#}
         </div>
         <h1><a style="margin-left: 35%;color: #fec139;" href="{{ path("list_evenement_front") }}">Participer !</a></h1>
     </div>
@@ -280,17 +339,25 @@
                                 <span><i class="fa fa-home" aria-hidden="true"></i></span>
                                 <h5>Z.I. Chotrana II B.P. 160، Pôle Technologique El Ghazela، Ariana 2088</h5>
                             </li>
+
                             <li>
                                 <span><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
                                 <h5> info@velo.tn </h5>
                             </li>
+
                             <li>
                                 <span><i class="fa fa-phone" aria-hidden="true"></i></span>
                                 <h5 style="margin-left: 10px;"> +216 52	669	482 </h5>
                             </li>
+
+
+
                         </ul>
+
                     </div>
                 </div>
+
+
             </div>
         </div>
     </div>

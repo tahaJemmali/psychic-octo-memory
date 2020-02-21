@@ -1,0 +1,235 @@
+{% extends "front/autre/autreautre.html.twig" %}
+{% block cartn %} {{ cart|length }}  {% endblock %}
+{% block titre %} Espace Paiement  {% endblock %}
+
+{% block css %}
+    {#<link rel="stylesheet" type="text/css" href="{{ asset('autre/styles/bootstrap-4.1.2/bootstrap.min.css') }}">
+    <link href="{{ asset('autre/plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('autre/plugins/flexslider/flexslider.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('autre/styles/product.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('autre/styles/product_responsive.css') }}">#}
+
+{#
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/fahd/assets/styles/bootstrap-4.1.2/bootstrap.min.css') }}">
+    <link href="{{ asset('back/fahd/assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/fahd/assets/styles/cart.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/fahd*assets/styles/cart_responsive.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ asset("back/fahd/AfficherProduitCss.css") }}">#}
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/fahd/assets/styles/bootstrap-4.1.2/bootstrap.min.css') }}">
+    <link href="{{ asset('back/fahd/assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/fahd/assets/styles/checkout.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/fahd/assets/styles/checkout_responsive.css') }}">
+
+    <script src="{{ asset('jquery.js') }}"></script> {# SCRIPTTTTTTTTTTTT #}
+{% endblock %}
+
+{% block searsh %}
+    <div class="header_search">
+        <form action="#" id="header_search_form">
+            <input type="text" class="search_input" placeholder="Recherche..." required="required" disabled>
+            <button class="header_search_button"><img src="images/search.png" alt=""></button>
+        </form>
+    </div>
+{% endblock %}
+
+{% block body %}
+    <div class="checkout">
+        <div class="container">
+            <div class="row">
+
+                <!-- Billing -->
+                <div class="col-lg-6">
+                    <div class="billing">
+                        <div class="checkout_title">DÉTAILS DE LA FACTURATION</div>
+                        <div class="checkout_form_container">
+                            <form method="POST" action="{{ path('checkout_confirm') }}" id="chek_form">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <!-- Name -->
+                                        <input type="text" id="checkout_name" name="checkout_name" class="checkout_input" placeholder="Nom" value="{{ user_username }}" disabled="disabled" readonly="">
+                                    </div><br>
+                                    {#
+                                    <div class="col-lg-6">
+                                        <!-- Last Name -->
+                                        <input type="text" id="checkout_last_name" class="checkout_input" placeholder="Prénom" value="dddd" disabled="disabled" readonly="">
+                                    </div>#}
+                                </div>
+                                <div><br>
+                                    <!-- Company -->
+                                    <input type="text" id="checkout_company" name="checkout_company" placeholder="Societe (option)" class="checkout_input">
+                                </div><br>
+                                <div>
+                                    <!-- Country -->
+                                    <select name="checkout_country" id="checkout_country" class="dropdown_item_select checkout_input" >
+                                        <option value="country" disabled>Ville</option>
+                                        <option value="Ariana" selected="">Ariana</option>
+                                        <option value="Tunis">Tunis </option>
+                                        <option value="Nabeul">Nabeul </option>
+                                    </select>
+                                </div><br>
+                                <div>
+                                    <!-- Address -->
+                                    {#<input type="text" id="checkout_address" class="checkout_input" placeholder="Adresse 1" value="{{ user_adress }}" disabled="disabled" readonly="">#}
+                                    <input type="text" id="checkout_address" name="checkout_address" class="checkout_input checkout_address" placeholder="Adresse" required="required" onblur="CheckInfoLettreChiffree(this)" onkeyup="CheckInfoLettreChiffree(this)">
+                                    <input type="text" id="checkout_address_2" name="checkout_address_2" class="checkout_input checkout_address_2" placeholder="Adresse 2 (option)"  onblur="CheckInfoLettreChiffree(this)" onkeyup="CheckInfoLettreChiffree(this)">
+
+                                </div>
+                                <div><br>
+                                    <!-- Zipcode -->
+                                    <input type="text" id="checkout_zipcode" name="checkout_zipcode" class="checkout_input checkout_address_3" placeholder="Code Postal" required="required" onblur="CheckInfoChiffree(this)" onkeyup="CheckInfoChiffree(this)">
+                                </div><br>
+                                <script>
+                                    function CheckInfoChiffree(e)
+                                    {
+                                        var regex = /^[0-9]{4,5}$/;
+                                        if(!regex.test(e.value))
+                                        {
+                                            e.style.borderColor = "red" ;
+                                            $('#checks').val('false');
+                                            return false;
+                                        }
+                                        else
+                                        {
+                                            e.style.borderColor = "" ;
+                                            $('#checks').val('true');
+                                            return true;
+                                        }
+                                    }
+                                    function CheckInfoLettreChiffree(e)
+                                    {
+                                        var regex = /^[a-zA-Z0-9., -]{4,}$/ ;
+                                        if(!regex.test(e.value))
+                                        {
+                                            e.style.borderColor = "red" ;
+                                            if (e.id=='checkout_address_2')
+                                                e.style.borderColor = "orange" ;
+                                            $('#checks').val('false');
+                                            return false;
+                                        }
+                                        else
+                                        {
+                                            e.style.borderColor = "" ;
+                                            $('#checks').val('true');
+                                            return true;
+                                        }
+                                    }
+                                    function trigger() {
+                                        $('#checks').val('false');
+                                        $('#checkout_address').trigger('blur');
+                                        $('#checkout_zipcode').trigger('blur');
+                                        //$('#ECommerceBundle_product_name').trigger('blur');
+                                    }
+                                    </script>
+                                {#<div>
+                                    <!-- City / Town -->
+                                    <select name="checkout_city" id="checkout_city" class="dropdown_item_select checkout_input" require="required" onblur="CheckInfoSelectList(this,'city')">
+                                        <option value="city">Ville</option>
+                                    </select>
+                                </div>#}
+                                <div>
+                                    <!-- Phone no -->
+                                    <input type="phone" id="checkout_phone" class="checkout_input" placeholder="Numéro de Télephone" value="{{ user_phone }}" disabled="disabled" readonly="">
+                                </div><br>
+                                <div>
+                                    <!-- Email -->
+                                    <input type="email" id="checkout_email" class="checkout_input" placeholder="Email" value="{{ user_email }}" disabled="disabled" readonly="">
+                                    <input type="hidden" name="email"  value="{{ user_email }}" >
+                                    <input type="hidden" name="phone"  value="{{ user_phone }}" >
+
+                                </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cart Total -->
+                <div class="col-lg-6 cart_col">
+                    <div class="cart_total">
+                        <div class="cart_extra_content cart_extra_total">
+                           {#<form method="POST" action="{{ path('checkout_confirm') }}" id="chek_form">#}
+                                <div class="checkout_title">Total Panier</div>
+                                <ul class="cart_extra_total_list">
+                                    <li class="d-flex flex-row align-items-center justify-content-start">
+                                        <div class="cart_extra_total_title">Panier</div>
+                                        <div class="cart_extra_total_value ml-auto"><input type="text" name="totalpanier" style="text-align: right;margin-left: 133px;width: 40%;background:transparent; border:none;" readonly="" value=" {{ total_panier }}"> TND</div>
+                                    </li>
+                                    <li class="d-flex flex-row align-items-center justify-content-start">
+                                        <div class="cart_extra_total_title">Frais de livraison</div>
+                                        <div class="cart_extra_total_value ml-auto">Gratuit</div>
+                                    </li>
+                                    <li class="d-flex flex-row align-items-center justify-content-start">
+                                        <div class="cart_extra_total_title">Total</div>
+                                        <div class="cart_extra_total_value ml-auto">{{ total_panier }} TND</div>
+                                    </li>
+                                </ul>
+                                <div class="payment_options">
+                                    <div class="checkout_title">MÉTHODE DE PAIEMENT</div>
+                                    <ul>
+                                        <li class="shipping_option d-flex flex-row align-items-center justify-content-start">
+                                            <label class="radio_container">
+                                                <input type="radio" id="radio_2" name="payment_radio" class="payment_radio" value="Paiement en Especes" checked="">
+                                                <span class="radio_mark"></span>
+                                                <span class="radio_text">Paiement en Espèces </span>
+                                            </label>
+                                        </li>
+                                        <li class="shipping_option d-flex flex-row align-items-center justify-content-start">
+                                            <label class="radio_container">
+                                                <input type="radio" id="radio_3" name="payment_radio" class="payment_radio" value="Paiement par Cheque">
+                                                <span class="radio_mark"></span>
+                                                <span class="radio_text">Paiement par Chéque</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                {#
+                                <div class="cart_text">
+                                    <p>cher(e) client(e) afin de valider votre commande veuillez appeler notre service commercial: tel: 12 34 56 78 / 12 34 56 78 durant nos horaires de travail.
+                                        <br>Sans votre validation téléphonique la commande ne sera pas traitée.</p>
+                                    <select class="dropdown_item_select checkout_input" require="required" name="nomLivreur">
+
+
+                                        <option>DHL:(internationale)</option><option>Hammemi Transport</option><option>Tunisia Express</option>
+
+                                    </select>
+                                    <div class="cart_text">*DHL:(internationale): Transport internationale<br><br>*Hammemi Transport: La société Hammami Transport « HT », entreprise de transport routier de marchandises, de tout premier plan implantée dans le sud de la Tunisie (Sfax)<br><br>*Tunisia Express: Tunisia Express couvre 100% du territoire tunisien via des agences implantées dans 6 gouvernorats.
+                                        Plus que 6 millions de livraisons réussies depuis 2010
+                                        Plus que 80 employés chevronnés au service des clients<br><br></div>								<br>
+
+                                    <div>
+
+                                        <textarea type="text" name="designation" placeholder="Remarques pour la livraison" class="checkout_input"></textarea>
+
+                                    </div>
+                                </div>#}
+                                <!-- <div >Confirmer l'achat  -->
+                                {#<input type="text" name="PDO" value="">
+                                <input type="hidden" value="C1556195151" name="id_client_checkout">
+                                <input type="hidden" value="0" name="test_ck">#}
+                                <br>
+                                <button type="button" id="tp_submit" class="btn btn-warning" style="width:100%;" form="checkout" value="ConfirmerAchat" >Confirmer l'achat</button>
+                                <input type="hidden" id="checks" class="checkout_input checkout_address_99" value="false" >
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function()
+        {$("#tp_submit").click(function(e)
+        {  trigger();
+            if ($('#checks').val()=='true')
+            $("#chek_form").submit();
+            else
+                e.preventDefault();
+        });
+        });
+    </script>
+{% endblock %}
+
+

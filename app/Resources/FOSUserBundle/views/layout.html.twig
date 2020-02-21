@@ -1,4 +1,5 @@
 {% extends "front/autre/autre.html.twig" %}
+{% block cartn %}*{% endblock %}
 {% block titre %}Connexion{% endblock %}
 {% block css %}
     <link rel="stylesheet" type="text/css" href="{{ asset("autre/styles/bootstrap-4.1.2/bootstrap.min.css") }}">
@@ -7,6 +8,11 @@
     <link rel="stylesheet" type="text/css" href="{{ asset("autre/styles/checkout_responsive.css") }}">
 {% endblock %}
 {% block body %}
+<div class="checkout">
+    <div class="container">
+        <div class="row">
+            <!-- Inscription/billing -->
+            <div class="col-lg-6">
     <div class="login">
         <div class="form_login">
             <div>
@@ -41,6 +47,10 @@
 
         </div>
     </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
 

@@ -2,8 +2,9 @@
 
 namespace LoginBundle\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use ECommerceBundle\Entity\Product;
+use Doctrine\Common\Collections\ArrayCollection;
 use EventBundle\Entity\Evenement;
 use FOS\UserBundle\Model\User as BaseUser;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -47,6 +48,8 @@ class User extends BaseUser
      */
     protected  $pts_fidelite;
 
+
+
     /**
      * @ORM\ManyToMany(targetEntity="EventBundle\Entity\Evenement", mappedBy="users")
      */
@@ -71,6 +74,7 @@ class User extends BaseUser
     {
         return $this->id;
     }
+
 
     /**
      * @param mixed $id
@@ -161,4 +165,14 @@ class User extends BaseUser
     {
         $this->photo = $photo;
     }
+
+    // for cart
+    /**
+     * @ORM\OneToMany(targetEntity="\ECommerceBundle\Entity\Cart", mappedBy="user",cascade={"persist","merge"} )
+     */
+    protected $product;
+    // for cart
+
+
+
 }

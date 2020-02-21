@@ -1,0 +1,18 @@
+<div id="uploaded_image">
+    {% for image in images %}
+<img src="{{ asset(''~image.image) }}"  style="height: 150px" class="img-thumbnail">
+    <button type="button"  class="btn btn-link remove_images" id="{{ image.id }}">Remove</button>
+{% endfor %}
+    <input type="hidden" value="{{ refrence }}" id="refe">
+</div>
+
+
+{#
+echo '<img src="'.'./images/' . $im['image'].'" height="150" width="225" class="img-thumbnail" />
+<button type="button"  class="btn btn-link remove_image" id="'.$im['id'].'">Remove</button>
+<input type="hidden" value="'.$im['cin'].'" id="cinn">
+';
+#}
+
+
+<script src="{{ asset('jquery.js') }}"></script>

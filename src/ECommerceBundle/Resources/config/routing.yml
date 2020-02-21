@@ -1,0 +1,121 @@
+Add_Product:
+    path:     /admin/Add_Product
+    defaults: { _controller: ECommerceBundle:Product:Add_Product }
+next:
+    path:     /admin/next
+    defaults: { _controller: ECommerceBundle:Image:next }
+im:
+    path:     /admin/im
+    defaults: { _controller: ECommerceBundle:Image:im }
+remove_image:
+    path:     /admin/remove_image
+    defaults: { _controller: ECommerceBundle:Image:remove_image }
+
+
+test:
+    path:     /admin/test
+    defaults: { _controller: ECommerceBundle:Product:test }
+
+
+List_Product:
+    path:     /admin/List_Product
+    defaults: { _controller: ECommerceBundle:Product:List_Product }
+
+
+Delete_Product:
+    path:     /admin/Delete_Product/{id}
+    defaults: { _controller: ECommerceBundle:Product:Delete_Product }
+
+Modify_Product:
+    path:     /admin/Modify_Product/{id}
+    defaults: { _controller: ECommerceBundle:Product:Modify_Product }
+
+modifier_next:
+    path:     /admin/modifier_next
+    defaults: { _controller: ECommerceBundle:Image:modifier_next }
+
+List_Product_Front:
+    path:     /List_Product_Front/{category}
+    defaults: { _controller: ECommerceBundle:Product:List_Product_Front }
+
+Single_Product_Front:
+    path:     /Single_Product_Front/{refrence}
+    defaults: { _controller: ECommerceBundle:Product:Single_Product_Front }
+
+
+
+Add_Cart:
+    path:     /Add_Cart
+    defaults: { _controller: ECommerceBundle:Cart:Add_Cart }
+Cart:
+    path:     /Cart
+    defaults: { _controller: ECommerceBundle:Cart:Cart }
+delete_article:
+    path:     /delete_article/{id_article}
+    defaults: { _controller: ECommerceBundle:Cart:delete_article }
+
+Checkout:
+    path:     /Checkout
+    defaults: { _controller: ECommerceBundle:Cart:Checkout }
+
+
+empty_cart:
+    path:     /empty_cart
+    defaults: { _controller: ECommerceBundle:Cart:empty_cart }
+
+checkout_confirm:
+    path:     /checkout_confirm
+    defaults: { _controller: ECommerceBundle:Commande:checkout_confirm }
+
+List_Commande:
+    path:     /admin/List_Commande
+    defaults: { _controller: ECommerceBundle:Commande:List_Commande }
+
+delete_commande:
+    path:     /admin/delete_commande/{id_commande}
+    defaults: { _controller: ECommerceBundle:Commande:delete_commande }
+
+modify_commande:
+    path:     /admin/modify_commande/{id_commande},{clientid}
+    defaults: { _controller: ECommerceBundle:Commande:modify_commande }
+
+
+pdf:
+    path:     /pdf
+    defaults: { _controller: ECommerceBundle:Default:pdf }
+
+
+fos_user_profile_commande:
+    path:     /fos_user_profile_commande
+    defaults: { _controller: ECommerceBundle:Commande:fos_user_profile_commande }
+
+Recherche_back:
+    path:     /Recherche_back
+    defaults: { _controller: ECommerceBundle:Default:Recherche_back }
+
+Sort_back:
+    path:     /Sort_back
+    defaults: { _controller: ECommerceBundle:Default:Sort_back }
+
+Sort_commande:
+    path:     /Sort_commande
+    defaults: { _controller: ECommerceBundle:Default:Sort_commande }
+
+Searsh_Product_Front:
+    path:     /Searsh_Product_Front
+    defaults: { _controller: ECommerceBundle:Default:Searsh_Product_Front }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,284 @@
+{% extends "front/autre/autreautre.html.twig" %}
+
+{% block titre %}Espace Client {% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('autre/styles/bootstrap-4.1.2/bootstrap.min.css') }}">
+    <link href="{{ asset('autre/plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('autre/plugins/flexslider/flexslider.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('autre/styles/product.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('autre/styles/product_responsive.css') }}">
+
+    <link href="{{ asset('back/fahd/ProfilClient.css') }}" rel="stylesheet" id="bootstrap-css">
+    <!-- Bootstrap CSS -->
+    <link href="{{ asset('front/css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- CSS Custom -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('front/css/style.css') }}">
+    <link href="{{ asset('front/css/font-awesome.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('front/css/animate.min.css') }}">
+    <link href="{{ asset('front/css/gallery.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/fahd/popLiv.css') }}" />
+{#
+    <!--== font-awesome ==-->
+
+    <!--== magnific-popup ==-->
+    <link href="{{ asset('front/assets/css/magnific-popup.css') }}" rel="stylesheet">
+
+    <!--== owl carousel ==-->
+    <link href="{{ asset('front/assets/css/owl.carousel.css') }}" rel="stylesheet">
+
+    <!--== animate css ==-->
+    <link href="{{ asset('front/assets/css/animate.min.css') }}" rel="stylesheet">
+
+    <!--== style css ==-->
+    <link href="{{ asset('front/assets/css/style.css') }}" rel="stylesheet">
+
+    <!--== responsive css ==-->
+    <link href="{{ asset('front/assets/css/responsive.css') }}" rel="stylesheet">
+
+    <!--== theme color css ==-->
+    <link href="{{ asset('front/assets/css/theme-color.css') }}" rel="stylesheet">
+
+    <script src="{{ asset('front/assets/js/jquery-2.1.4.min.js') }}"></script>
+#}
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+    {#<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>#}
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+
+    <script src="{{ asset('jquery.js') }}"></script> {# SCRIPTTTTTTTTTTTT #}
+{% endblock %}
+
+{% block body %}
+    <section id="home" class="contact_bg">
+        <div class="container">
+            <h2 style="color:#fec139"> Votre Espace :</h2>
+
+            <div class="container">
+                <div class="row profile">
+                    <div class="col-md-3">
+                        <div class="profile-sidebar">
+                            <div class="profile-userpic">
+                                {#<img src="upload/unknown.png" class="img-responsive" alt="">#}
+                                <img src="{{ asset(user.photo) }}" alt="{{ user.username }}" class="img-responsive" style="width: 60%" >
+                            </div>
+
+                            <div class="profile-usertitle">
+                                <div class="profile-usertitle-name">
+                                    {{ user.username }}
+                                </div>
+
+                            </div>
+
+                            <div class="profile-usermenu">
+                                <ul class="nav">
+                                    <li >
+                                        <a href="ProfilClient-Informations.php">
+                                            <i class="fas fa-info-circle"></i>
+                                            Mes Informations&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; </a>
+                                    </li>
+
+                                    <li class="active"> {# class="active"#}
+                                        <a href="ProfilClient-Commandes.php">
+                                            <i class="fas fa-shopping-cart"></i>
+                                            Mes Commandes&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="../../Gestion Reclamations/view/afficher_reclamation.php">
+                                            <i class="fas fa-exclamation"></i>
+                                            Mes Réclammations&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&thinsp; </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="../../Gestion Demande/view/afficher_demande.php">
+                                            <i class="fas fa-reply"></i>
+                                            Mes Demandes&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&thinsp; </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">
+                                            <i class="fas fa-sign-out-alt"></i>
+                                            Déconnexion&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- END MENU -->
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="profile-content">
+                            <!-- Ekteb houni el code  -->
+
+
+                            <h4 style="color:black;"> Mes Commandes: </h4>
+                            <br>
+                            <div class="table-responsive" style="background:white;">
+                                <div id="myModalAhmed1" class="modalAhmed">
+
+                                    <!-- Modal content -->
+                                    <div class="modal-contentAhmed">
+                                        <span class="closeAhmed1">×</span>
+                                        <h2>Votre Livraison :</h2> <br>
+                                        <strong>L'etat de votre livraison : </strong>confirme<br><strong>Votre Livreur : </strong>DHL:(internationale)<br><strong>La date de la confirmation d'achat : </strong>2019-05-04 à 14:45<br><strong>Votre Code de Livraison : </strong><br><strong>Url du Livreur : </strong><a>https://www.dhl.fr/fr/dhl_express/suivi_expedition.html</a><br><p></p>		<script>
+
+
+
+                                            // Get the button that opens the modal
+                                            var btn = document.getElementById("myBtnAhmed1");
+
+
+                                            // Get the <span> element that closes the modal
+                                            var span = document.getElementsByClassName("closeAhmed1")[0];
+
+                                            btn.onclick = function() {
+                                                // Get the modal
+                                                var modal = document.getElementById('myModalAhmed1');
+                                                modal.style.display = "block";
+
+
+
+
+                                                // When the user clicks on <span> (x), close the modal
+                                                span.onclick = function() {
+
+                                                    modal.style.display = "none";
+                                                }
+
+                                                // When the user clicks anywhere outside of the modal, close it
+                                                window.onclick = function(event) {
+                                                    if (event.target == modal) {
+                                                        modal.style.display = "none";
+                                                    }
+                                                }}
+                                        </script>
+                                    </div></div><div id="myModalAhmed2" class="modalAhmed">
+
+                                    <!-- Modal content -->
+                                    <div class="modal-contentAhmed">
+                                        <span class="closeAhmed2">×</span>
+                                        <h2>Votre Livraison :</h2> <br>
+                                        <strong>L'etat de votre livraison : </strong>confirme<br><strong>Votre Livreur : </strong>DHL:(internationale)<br><strong>La date de la confirmation d'achat : </strong>2019-05-04 à 14:48<br><strong>Votre Code de Livraison : </strong><br><strong>Url du Livreur : </strong><a>https://www.dhl.fr/fr/dhl_express/suivi_expedition.html</a><br><p></p>		<script>
+
+
+
+                                            // Get the button that opens the modal
+                                            var btn = document.getElementById("myBtnAhmed2");
+
+
+                                            // Get the <span> element that closes the modal
+                                            var span = document.getElementsByClassName("closeAhmed2")[0];
+
+                                            btn.onclick = function() {
+                                                // Get the modal
+                                                var modal = document.getElementById('myModalAhmed2');
+                                                modal.style.display = "block";
+
+
+
+
+                                                // When the user clicks on <span> (x), close the modal
+                                                span.onclick = function() {
+
+                                                    modal.style.display = "none";
+                                                }
+
+                                                // When the user clicks anywhere outside of the modal, close it
+                                                window.onclick = function(event) {
+                                                    if (event.target == modal) {
+                                                        modal.style.display = "none";
+                                                    }
+                                                }}
+                                        </script>
+                                    </div></div><div id="myModalAhmed3" class="modalAhmed">
+
+                                    <!-- Modal content -->
+                                    <div class="modal-contentAhmed">
+                                        <span class="closeAhmed3">×</span>
+                                        <h2>Votre Livraison :</h2> <br>
+                                        <strong>L'etat de votre livraison : </strong>confirme<br><strong>Votre Livreur : </strong>DHL:(internationale)<br><strong>La date de la confirmation d'achat : </strong>2019-05-04 à 15:28<br><strong>Votre Code de Livraison : </strong><br><strong>Url du Livreur : </strong><a>https://www.dhl.fr/fr/dhl_express/suivi_expedition.html</a><br><p></p>		<script>
+
+
+
+                                            // Get the button that opens the modal
+                                            var btn = document.getElementById("myBtnAhmed3");
+
+
+                                            // Get the <span> element that closes the modal
+                                            var span = document.getElementsByClassName("closeAhmed3")[0];
+
+                                            btn.onclick = function() {
+                                                // Get the modal
+                                                var modal = document.getElementById('myModalAhmed3');
+                                                modal.style.display = "block";
+
+
+
+
+                                                // When the user clicks on <span> (x), close the modal
+                                                span.onclick = function() {
+
+                                                    modal.style.display = "none";
+                                                }
+
+                                                // When the user clicks anywhere outside of the modal, close it
+                                                window.onclick = function(event) {
+                                                    if (event.target == modal) {
+                                                        modal.style.display = "none";
+                                                    }
+                                                }}
+                                        </script>
+
+                                    </div></div><table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Méthode de Paiement</th>
+                                        <th scope="col">Etat de la Commande</th>
+                                        {#<th scope="col">Prix Total</th>#}
+                                        <th scope="col">Date de la Commande</th>
+                                        <th scope="col">Telecharger Facture</th>
+                                        {#<th scope="col">Consulter La livraison</th>#}
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for cmd in commandes %}
+                                    <tr>
+                                        <th scope="row">{{ loop.index }}</th>
+                                        <td>{{ cmd.paiment }}</td>
+                                        <td>{{ cmd.etat }}</td>
+                                       {# <td>231.473 Dt</td>#}
+                                        <td>{{ cmd.date | date('Y-m-d') }}</td>
+
+                                        <td><a class="btn btn-primary" target="_blank" href="{{ asset('FacturePdf/'~cmd.id~'_'~user.id~'.pdf') }}">Votre Facture</a></td>
+                                        {#<td><button class="btn btn-warning" id="myBtnAhmed1">
+                                                Consulter Livraison</button></td>#}
+                                    </tr>
+                                    {% endfor %}
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+        </div>
+
+    </section>
+{#
+    <script>
+        $(document).ready(function(){
+            //$('style').detach();
+//        or
+            $('style .hehe').remove();
+
+        });
+        </script>#}
+{% endblock %}

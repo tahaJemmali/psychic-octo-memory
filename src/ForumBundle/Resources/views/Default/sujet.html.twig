@@ -1,0 +1,116 @@
+{% extends "front/autre/autre.html.twig" %}
+{% block title %}commentaires{% endblock %}
+{% block titre %}commentaires{% endblock %}
+{% block body %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('taha/forum/inscri-login.css') }}"> <!-- HERE******** -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('taha/forum/checkout_responsive.css') }}"> <!-- HERE******** -->
+    <!-- Bootstrap -->
+    <link href="{{ asset('taha/forum/css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Custom -->
+    <link href="{{ asset('taha/forum/css/custom.css') }}" rel="stylesheet">
+    <!-- fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ asset('taha/forum/font-awesome-4.0.3/css/font-awesome.min.css') }}">
+    <!-- CSS STYLE-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('taha/forum/css/style.css') }}" media="screen" />
+    <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('taha/forum/rs-plugin/css/settings.css') }}" media="screen" />
+    <link href="{{ asset('taha/forum/main.css') }}" rel="stylesheet">
+
+    <div class="col-lg-6" style="margin-left: -20%">
+        <div class="billing">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8">
+                        <!-- sujet -->
+
+                        {% if sujet %}
+                            {% set x=commentaires|length %}
+                                {% set difference = date(sujet.dateCreation).diff(date('now')) %}
+                                {% set leftM = difference.i %}
+                                <div class="post" style="right: 50px;">
+                                    <div class="wrap-ut pull-left">
+                                        <div class="userinfo pull-left">
+                                            <div class="avatar">
+                                                <img src="{{ asset(sujet.user.photo) }}" alt="" />
+                                                <div class="status green">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                        <div class="posttext pull-left">
+                                            <h2><a href="02_topic.html">{{ sujet.titre }}</a></h2>
+                                            <p>{{ sujet.text }}</p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="postinfo pull-left">
+                                        <div class="comments">
+                                            <div class="commentbg">
+                                                {{ x }}
+                                                <div class="mark"></div>
+                                            </div>
+                                        </div>
+                                        {% if difference.y== 0  %}
+                                            <div class="time"><i class="fa fa-clock-o"></i> {% if difference.m != 0 %} {{ difference.m  }} months{% endif %}{% if difference.d != 0 %} {{ difference.d  }} days{% endif %} {% if difference.h != 0 %} {{ difference.h  }} hours{% endif %} {{ leftM }} min</div>
+                                        {% else %}
+                                            <div class="time"><i class="fa fa-clock-o"></i> {{ difference.y }} year</div>
+                                        {% endif %}
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                        {% endif %}
+                        <!-- POST -->
+                        <!-- commentaire -->
+
+                        {% if commentaires %}
+                            {% for key in commentaires %}
+                                {% set difference = date('now').diff(key.dateCreation) %}
+                                {% set leftM = difference.i %}
+                                <div class="d-flex justify-content-start mb-4">
+                                    <div class="img_cont_msg">
+                                        <img src="{{ asset(key.user.photo) }}" class="rounded-circle user_img_msg" alt="{{ key.user.username }}">
+                                    </div>
+                                    <div class="msg_cotainer">
+                                        <p style="color: white" >{{ key.text }}</p>
+
+                                    </div>
+                                    <span style="color: black" class="msg_time">Il y a {% if difference.m != 0 %} {{ difference.m  }} months{% endif %}{% if difference.d != 0 %} {{ difference.d  }} days{% endif %} {% if difference.h != 0 %} {{ difference.h  }} hours{% endif %} {{ difference.i }} minutes</span>
+                                </div>
+                                <br />
+                            {% endfor %}
+                        {% endif %}
+                        <!-- POST -->
+                    </div>
+
+                </div>
+
+            </div>
+            <br />
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED")  %}
+                {% if sujet.commntaireOn %}
+
+                <div class="checkout_title">Ajouter Commentaire</div>
+
+                <div class="checkout_form_container">
+                    {{ form_start(form, {'attr': {'class': 'checkout_form'}}) }}
+                    {{ form_end(form) }}
+                </div>
+                {% else %}
+            <div class="alert alert-danger">
+                    <h5 style="text-align: center">Les commentaires sont désactivés par le propriétaire</h5>
+            </div>
+                {% endif %}
+            {% else %}
+                <div class="alert alert-success">
+                    <h5 style="text-align: center">Il faut vous connecter pour créer votre commentaire</h5>
+                </div>
+
+            {% endif %}
+        </div>
+
+    </div>
+
+
+  
+
+{% endblock %}
+   {% block footer %} {% endblock %}

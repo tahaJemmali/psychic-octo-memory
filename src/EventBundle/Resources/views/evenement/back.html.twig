@@ -118,7 +118,7 @@
             distance =countDown{{ i }} -now;
             if(distance <0)
             {
-                document.getElementById("MyDiv{{ i }}").innerHTML = " <a class=\"btn btn-outline-success btn-sm\" href=\"{{ path('score', { 'id': ids[i] }) }}\">Attribuer les scores</a>";
+                document.getElementById("MyDiv{{ i }}").innerHTML = " <a class=\"btn btn-outline-success btn-sm\" href=\"{{ path('score', { 'id': ids[i] }) }}\">Attribuer les scores</a><br><a class=\"btn btn-outline-info btn-sm\" href=\"{{ path('mailQR_invitation', { 'id': ids[i] }) }}\">Envoyer un mail au inviter</a>";
             }
         }, second);
         {% endfor %}

@@ -1,0 +1,7 @@
+forum_homepage:
+    path:     /forum
+    defaults: { _controller: ForumBundle:Default:index }
+
+commentaire_homepage:
+    path:     /forum/{id}
+    defaults: { _controller: ForumBundle:Default:show }

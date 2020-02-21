@@ -1,0 +1,164 @@
+{% extends "back/index.html.twig" %}
+
+{% block body %}
+
+<link rel="stylesheet" type="text/css" href="{{ asset("back/fahd/cs-skin-elastic.css") }}">
+<link rel="stylesheet" type="text/css" href="{{ asset("back/fahd/style.css") }}">
+<link rel="stylesheet" type="text/css" href="{{ asset("back/fahd/AfficherProduitCss.css") }}">
+<script src="{{ asset('jquery.js') }}"></script>
+
+<div class="content" >
+    <!-- EKTOB HOUNI -->
+    <div name="product_catalog_list" id="product_catalog_list" method="post" > <!-- action="supprimerProduit.php" -->
+        <div class="row">
+            <div class="col-md-12">
+                <input type="hidden" name="filter_category" value="">
+            </div>
+        </div>
+
+        <div class="row">
+
+            <!--<div class="col-md-12">--> <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <!--<div class="table-responsive">--> <div class="card">
+                    <h7 class="card-header" style="font-weight : bolder">Product List</h7>
+    <div id="form11">
+        <div class="card-body"  id="employee_table"> <!-- class="table-responsive" -->
+
+            {{ form_start(form) }}
+
+        <div class="form-group row">
+            <label class="col-12 col-sm-3 col-form-label text-sm-right" >Refrence</label>
+            <div class="col-12 col-sm-8 col-lg-6">
+                {{ form_widget(form.refrence,{'attr' :{'id':'Reftext','name':'refrence','class':'form-control','placeholder':'Ref..','onblur':'RefVerif(this.id,"textRef","Reftext_ck")' } }) }}
+                <input type="hidden" class="CHECK" required="" id="Reftext_ck">
+            </div>
+            <p id="textRef" class="ErrFah"></p>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-12 col-sm-3 col-form-label text-sm-right" >Name</label>
+            <div class="col-12 col-sm-8 col-lg-6">
+                {{ form_widget(form.name,{'attr' :{'id':'Nomtext','name':'name','class':'form-control','placeholder':'' } }) }}
+                <input type="hidden" class="CHECK" required="" id="Nomtext_ck">
+            </div>
+            <p id="textNom" class="ErrFah"></p>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-12 col-sm-3 col-form-label text-sm-right" >Category</label>
+            <div class="col-12 col-sm-8 col-lg-6">
+                {{ form_widget(form.category,{'attr' :{'id':'cattext','name':'categorie','class':'form-control','placeholder':'' } }) }}
+                <input type="hidden" class="CHECK" required="" id="Cattext_ck">
+                <datalist id="id_categorie">
+
+                </datalist>
+            </div>
+            <p id="textcat" class="ErrFah"></p>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-12 col-sm-3 col-form-label text-sm-right" id="PrixTTCtext" >Price</label>
+            <div class="col-12 col-sm-8 col-lg-6">
+                {{ form_widget(form.price,{'attr' :{'id':'Prixtext','name':'prixHT','class':'form-control','placeholder':'','data-parsley-maxlength':'6' } }) }}
+                <input type="hidden" class="CHECK" required="" id="Prixtext_ck">
+            </div>
+            <p id="textPrix" class="ErrFah"></p>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-12 col-sm-3 col-form-label text-sm-right">Stock</label>
+            <div class="col-12 col-sm-8 col-lg-6">
+                {{ form_widget(form.stock,{'attr' :{'id':'Qutext','name':'quantite','class':'form-control','placeholder':'','data-parsley-maxlength':'6' } }) }}
+                <input type="hidden" class="CHECK" required="" id="Quantitetext_ck">
+            </div>
+            <p id="textquantite" class="ErrFah"></p>
+        </div>
+
+        {#
+            <div class="form-group row">
+                <label class="col-12 col-sm-3 col-form-label text-sm-right">date Added</label>
+                <div class="col-12 col-sm-8 col-lg-6">
+                    <input type="date" id="ddate" name="date" data-parsley-min="6" placeholder="" class="form-control" value="" onkeydown="date_chk(this)" readonly> <!-- -->
+                    {{ form_widget(form.date,{'attr' :{'id':'ddate','name':'date','class':'form-control','placeholder':'' ,'data-parsley-min':'6'  } }) }}
+                </div>
+            </div>
+        #}
+
+        <div class="form-group row">
+            <label class="col-12 col-sm-3 col-form-label text-sm-right" >Description</label>
+            <div class="col-12 col-sm-8 col-lg-6">
+                {{ form_widget(form.description,{'attr' :{'name':'description','class':'form-control','placeholder':'','style':'height: 250px' } }) }}
+            </div>
+        </div>
+
+
+        <div class="form-group row text-right">
+            <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
+
+                <input type="submit" id="MainbtnSubmit" class="btn btn-space btn-primary" name="ajouter" value="Modify Image">
+                <input type="submit" id="Done" class="btn btn-space btn-primary" name="Done" value="Done">
+                {# {{ form_widget(form.AddProduct ,{'attr' :{'id':'MainbtnSubmit','class':'btn btn-space btn-primary' } }) }}#}
+                <a class="btn btn-space btn-secondary" href="{{ path('List_Product') }}">Cancel</a>
+            </div>
+        </div>
+<input type="hidden" id="idp" value="{{ id_product }}">
+        {{ form_end(form) }}
+
+        </div>
+
+    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="{{ asset('jquery.js') }}"></script>
+
+    <script>
+        $(document).ready(function(){
+
+            //    var path = "{# path('next') #}";
+
+            $("#MainbtnSubmit").click(function (e) {
+                //alert()
+                //var btn = this.id ;
+                //alert(btn);
+                //alert('MainbtnSubmit clicked');
+                //alert(document.getElementById('testbundle_product_refrence').value);
+                var id = $('#idp').val() ;
+                //alert(id);
+                //id=144;
+                var refrence = $('#ECommerceBundle_product_refrence').val() ;
+                var name = $('#ECommerceBundle_product_name').val() ;
+                var category = $('#ECommerceBundle_product_category').val() ;
+                var price = parseFloat($('#ECommerceBundle_product_price').val()) ;
+                var stock = $('#ECommerceBundle_product_stock').val() ;
+                var description = $('#ECommerceBundle_product_description').val() ;
+//alert('id : '+id + ' ref :'+refrence + ' name :'+ name + ' cat :'+ category + ' price :'+ price + ' stock :'+ stock + ' descprtion:'+ description);
+                //alert(refrence);
+                //var Form_Data = new FormData (this);
+                e.preventDefault();
+                $.ajax({
+                    cache:false,
+                    //url: path,
+                    data : {id:id,refrence:refrence,name:name,category:category,price:price,stock:stock,description:description},
+                    url: '{{ path('modifier_next') }}',
+                    method: "POST",
+                    success: function(data) {
+                        //alert ('about to html it');
+                        $('#form11').html(data);
+                        // alert ('success');
+                    }
+                })
+            });
+
+        });
+
+
+    </script>
+
+
+
+{% endblock %}
+

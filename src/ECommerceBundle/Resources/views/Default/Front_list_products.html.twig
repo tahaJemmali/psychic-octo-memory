@@ -1,0 +1,144 @@
+{% extends "front/autre/autreautre.html.twig" %}
+{% block cartn %}{{ cartn|length }}{% endblock %}
+{% block titre %}{{ category }} / Produits{% endblock %}
+
+{% block searsh %}
+    <div class="header_search">
+        <form action="{{ path('Searsh_Product_Front') }}" id="header_search_form">
+            <input type="text" name="input_searsh" class="search_input" placeholder="Recherche..." required="required">
+            <button class="header_search_button"><img src="{{ asset('autre/images/search.png') }}" alt=""></button>
+            <input type="hidden" name="categorys" value="{{ category|raw }}">
+        </form>
+    </div>
+{% endblock %}
+
+{% block body %}
+    <script src="{{ asset('jquery.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+            if ('{{ category|raw }}' == 'Piece de rechange')
+                $('#li_Piecederechange').addClass('active');
+            else $('#li_'+'{{ category|raw }}').addClass('active');
+        })
+        </script>
+    <div class="products">
+        <div class="container">
+            <div class="row products_bar_row">
+                <div class="col">
+                    <div class="products_bar d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-start justify-content-center">
+                        <div class="products_bar_links">
+                            <ul class="d-flex flex-row align-items-start justify-content-start">
+                                <li id="li_All"><a href="{{ path("List_Product_Front",{'category':'All'}) }}">All</a></li>
+                                <li id="li_Velo"><a href="{{ path("List_Product_Front",{'category':'Velo'}) }}">Velo</a></li>
+                                <li id="li_Accessoire"><a href="{{ path("List_Product_Front",{'category':'Accessoire'}) }}">Accessoire</a></li>
+                                <li id="li_Piecederechange"><a href="{{ path("List_Product_Front",{'category':'Piece de rechange'}) }}">Piece de rechange</a></li>
+                            </ul>
+                        </div>
+                        <div class="products_bar_side d-flex flex-row align-items-center justify-content-start ml-lg-auto">
+                            {#<div class="products_dropdown product_dropdown_sorting">
+                                <div class="isotope_sorting_text"><span>Default Sorting</span><i class="fa fa-caret-down" aria-hidden="true"></i></div>
+                                <ul>
+                                    <li class="item_sorting_btn" data-isotope-option='{ "sortBy": "original-order" }'>Default</li>
+                                    <li class="item_sorting_btn" data-isotope-option='{ "sortBy": "price" }'>Price</li>
+                                    <li class="item_sorting_btn" data-isotope-option='{ "sortBy": "name" }'>Name</li>
+                                </ul>
+                            </div>#}
+                            <div class="product_view d-flex flex-row align-items-center justify-content-start">
+                                {#<div class="view_item active"><img src="{{ asset('autre/images/view_1.png') }}" alt=""></div>
+                                <div class="view_item"><img src="images/view_2.png" alt=""></div>
+                                <div class="view_item"><img src="images/view_3.png" alt=""></div>#}
+                                {#<div class="view_item active"><img src="images/view_1.png" alt=""></div>
+                                <div class="view_item"><img src="images/view_2.png" alt=""></div>
+                                <div class="view_item"><img src="images/view_3.png" alt=""></div>#}
+                            </div>
+                            <div class="products_dropdown product_dropdown_sorting">
+                                <div class="isotope_sorting_text"><span>Default Sorting</span><i class="fa fa-caret-down" aria-hidden="true"></i></div>
+                                <ul>
+                                    <li class="item_sorting_btn" data-isotope-option='{ "sortBy": "original-order" }'>Default</li>
+                                    <li class="item_sorting_btn" data-isotope-option='{ "sortBy": "price" }'>Price</li>
+                                    <li class="item_sorting_btn" data-isotope-option='{ "sortBy": "name" }'>Name</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row products_row products_container grid">
+
+                {% for product in Products %}
+                <!-- Product -->
+                <div class="col-xl-4 col-md-6 grid-item new">
+                    <div class="product">
+                        <div class="product_image">
+                            {% set continue = false %}
+
+                            {% for image in Images %}
+                                {% if not continue %}
+                                {% if image.product.id  == product.id %}
+                                    {% set continue = true %}
+                                    <div class="img-thumbnail">
+                                        <img src="{{ asset(''~image.image) }}" style="height:250px" >{#class="img-thumbnail" style="height:50px;width: 50px"#}
+                                    </div>
+                                {% endif %}
+                                {% endif %}
+
+                            {% endfor %}
+
+                            {#<img src="images/product_1.jpg" alt="">#}
+                        </div>
+                        <div class="product_content">
+                            <div class="product_info d-flex flex-row align-items-start justify-content-start">
+                                <div>
+                                    <div>
+                                        <div class="product_name"><a href="{{ path("Single_Product_Front",{'refrence':product.refrence}) }}">{{ product.name }}</a></div>
+                                        <div class="product_category">In <a href="category.html">{{ product.category }}</a></div>
+                                    </div>
+                                </div>
+                                <div class="ml-auto text-right">
+                                    <div class="rating_r rating_r_4 home_item_rating"><i></i><i></i><i></i><i></i><i></i></div>
+                                    <div class="product_price text-right">{{ product.price }}{#<span>.99</span>#}&nbsp;Dt</div>
+                                </div>
+                            </div>
+
+                            {#<div class="product_buttons">
+                                <div class="text-right d-flex flex-row align-items-start justify-content-start">
+                                    <div class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center">
+                                        <div><div><img src="images/cart.svg" class="svg" alt=""><div>+</div></div></div>
+                                    </div>
+                                </div>
+                            </div>#}
+
+                            <div class="product_buttons">
+                                <div class="text-right d-flex flex-row align-items-start justify-content-start">
+                                    <div id="myBtn3" onclick="window.location.href = '{{ path("Single_Product_Front",{'refrence':product.refrence}) }}'" style="width:100%;" class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center">
+                                        <div>
+                                            <div>
+                                                <img src="{{ asset('autre/images/cart.svg') }}" class="svg" alt="">
+                                                <div>+</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+            {#<div class="row page_nav_row">
+                <div class="col">
+                    <div class="page_nav">
+                        <ul class="d-flex flex-row align-items-start justify-content-center">
+                            <li class="active"><a href="#">01</a></li>
+                            <li><a href="#">02</a></li>
+                            <li><a href="#">03</a></li>
+                            <li><a href="#">04</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>#}
+        </div>
+    </div>
+{% endblock %}

@@ -96,7 +96,7 @@
                     <li><a href="#" class="js-target-scroll">Réparations</a></li>
                     <li><a href="#" class="js-target-scroll">locations </a></li>
                     <li><a href="#" class="js-target-scroll">Montage </a></li>
-                    <li><a href="#" class="js-target-scroll">Forum </a></li>
+                    <li><a href="{{ path("forum_homepage") }}" class="js-target-scroll">Forum </a></li>
                 </ul>
             </nav>
             <div class="header_right d-flex flex-row align-items-center justify-content-start ml-auto">
@@ -245,7 +245,7 @@
         {% endblock %}
                     </div></div></div></div>
 
-        <footer class="footer">
+       {% block footer %} <footer class="footer">
             <div class="footer_content">
                 <div class="container">
                     <div class="row">
@@ -306,7 +306,7 @@
                     </div>
                 </div>
             </div>
-        </footer>
+        </footer>{% endblock %}
     </div>
 
 </div>

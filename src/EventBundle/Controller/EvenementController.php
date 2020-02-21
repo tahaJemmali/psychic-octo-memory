@@ -9,6 +9,7 @@ use EventBundle\Form\EditEventType;
 use EventBundle\Form\EvenementType;
 use LoginBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
@@ -88,6 +89,9 @@ class EvenementController extends Controller
     {
         $em=$this->getDoctrine()->getManager();
         $event=$this->getDoctrine()->getRepository(Evenement::class)->find($id);
+        $filesystem = new Filesystem();
+        $filesystem->remove($event->getImage());
+        $em->remove($event->getScore());
         $em->remove($event);
         $em->flush();
         return $this->redirectToRoute("list_evenement_back");
@@ -177,7 +181,7 @@ class EvenementController extends Controller
     public function annulerAction($id_event,$id_user)
     {
         $this->getDoctrine()->getRepository(Evenement::class)->annuler($id_event,$id_user);
-        $this->addFlash('success', 'Vous ne participer plus à cet evenement !');
+        $this->addFlash('success', 'Vous ne participez plus à cet evenement !');
         return $this->redirectToRoute("list_evenement_front");
     }
     public function scoreAction(Request $request,$id)

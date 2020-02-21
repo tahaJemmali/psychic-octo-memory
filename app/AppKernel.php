@@ -20,6 +20,8 @@ class AppKernel extends Kernel
             new LoginBundle\LoginBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new EventBundle\EventBundle(),
+            new Skies\QRcodeBundle\SkiesQRcodeBundle(),
+            new ForumBundle\ForumBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

@@ -5,6 +5,7 @@ namespace EventBundle\Controller;
 use EventBundle\Entity\Trophet;
 use EventBundle\Form\TrophetType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\Request;
 
 class TrophetController extends Controller
@@ -47,6 +48,8 @@ class TrophetController extends Controller
     {
         $em=$this->getDoctrine()->getManager();
         $event=$this->getDoctrine()->getRepository(Trophet::class)->find($id);
+        $filesystem = new Filesystem();
+        $filesystem->remove($event->getImage());
         $em->remove($event);
         $em->flush();
         return $this->redirectToRoute("list_trophet_back");

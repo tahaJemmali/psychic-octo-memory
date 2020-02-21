@@ -2,62 +2,104 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/src/EventBundle/Resources/views/evenement/index.html.twig" line="147" />
-    <bookmark url="file://$PROJECT_DIR$/src/EventBundle/Controller/EvenementController.php" line="200" />
+    <bookmark url="file://$PROJECT_DIR$/src/EventBundle/Controller/EvenementController.php" line="204" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48f4ebfc-2a31-4939-a4d5-bd15b68b159f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/EventBundle/Controller/DefaultController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EventBundle/Controller/EvenementController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EventBundle/Controller/TrophetController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EventBundle/Entity/Evenement.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EventBundle/Entity/Score.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EventBundle/Entity/Trophet.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EventBundle/EventBundle.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EventBundle/Form/EditEventType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EventBundle/Form/EvenementType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EventBundle/Form/ParticipantType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EventBundle/Form/ScoreType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EventBundle/Form/TrophetType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EventBundle/Repository/EvenementRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EventBundle/Repository/ScoreRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EventBundle/Repository/TrophetRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EventBundle/Resources/config/routing.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EventBundle/Resources/config/routing/evenement.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EventBundle/Resources/config/services.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EventBundle/Resources/views/Default/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EventBundle/Resources/views/evenement/add.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EventBundle/Resources/views/evenement/back.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EventBundle/Resources/views/evenement/edit.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EventBundle/Resources/views/evenement/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EventBundle/Resources/views/evenement/inviter.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EventBundle/Resources/views/evenement/participer.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EventBundle/Resources/views/evenement/show.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EventBundle/Resources/views/evenement/update.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EventBundle/Resources/views/trophet/add.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EventBundle/Resources/views/trophet/back.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EventBundle/Resources/views/trophet/display.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EventBundle/Resources/views/trophet/edit.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EventBundle/Tests/Controller/EvenementControllerTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LoginBundle/Controller/ProfileController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/EventBundle/Controller/DefaultControllerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/EventBundle/Controller/QrController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/EventBundle/Resources/config/routing/mailQr.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/EventBundle/Resources/views/mail/qr.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/EventBundle/Resources/views/mail/test.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ForumBundle/Controller/DefaultController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ForumBundle/Entity/Commentaire.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ForumBundle/Entity/Sujet.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ForumBundle/Form/CommentaireType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ForumBundle/Form/SujetType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ForumBundle/ForumBundle.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ForumBundle/Repository/CommentaireRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ForumBundle/Repository/SujetRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ForumBundle/Resources/config/routing.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ForumBundle/Resources/config/services.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ForumBundle/Resources/views/Default/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ForumBundle/Resources/views/Default/sujet.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/ForumBundle/Controller/DefaultControllerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/velo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/velo.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/AppKernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/AppKernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Profile/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Profile/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Profile/show_content.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Profile/show_content.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/layout.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/back/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/back/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/front/autre/autre.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/front/autre/autre.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/front/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/front/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/config/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/routing.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LoginBundle/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoginBundle/Controller/RegistrationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LoginBundle/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoginBundle/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LoginBundle/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoginBundle/Repository/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LoginBundle/Resources/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoginBundle/Resources/config/routing.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/front/images/BackGround1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/front/images/contact_bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/front/images/services_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EventBundle/Controller/EvenementController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventBundle/Controller/EvenementController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EventBundle/Controller/TrophetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventBundle/Controller/TrophetController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EventBundle/Resources/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventBundle/Resources/config/routing.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EventBundle/Resources/views/evenement/back.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventBundle/Resources/views/evenement/back.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EventBundle/Resources/views/evenement/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventBundle/Resources/views/evenement/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/taha/events/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/0266e33d3f546cb5436a10798e657d97.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/0b0d29e5d5c8a7a25dced6405bd022a9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/193510e35bf81956996aa49093954075.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/1bab3ee1fcee95ea059f452e9c6face6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/355e1a7b56e95137d9649e56cdf4025b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/3ff5f35251ebeaca1b9ef1cb671fa15d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/41dbaeec4466f58cd76a81b7add4a279.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/46a558d97954d0692411c861cf78ef79.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/46ca21dbd421969e00792c3cae595065.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/4a91a2632259bfeb28c052069c558843.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/4d83f681638e40203e88cb7cb014b74f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/54af6860114f54728b5c2fd9b5cfeca9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/5607fe8879e4fd269e88387e8cb30b7e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/5d7ada35204d7dd09cf8990cd0a2df2e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/5d8dc5dbd84f605017f1c835da6031d7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/6157966f9b9e2f35d2266675bad8b7f8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/654897e28023b9d57f35dc4424b892fb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/67038aaa05ffac51830cffb04441f8c3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/67a20639726a041ddbbd0f78e010f78b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/6876925aadb300b04d29c8cb3427d8da.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/6944d4d43c2ec200647b67e58153a123.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/709491516820c9f43b1249622a98a2fa.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/70feb62b69f16e0238f741fab228fec2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/73b973e8cb788aaacc0d76892f85a877.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/76033d11df25bb5c050fea077e1b02b6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/77b1ae6be955316d7234f2bc5a409cdd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/7aaba5f3511f56128e7130c2973e0503.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/80bd1978a3dff0dbaceb95fb9191e7ee.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/8289889263db4a40463e3f358bb7c7a1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/86b20716fbd5b253d27cec43127089bc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/8ebef38fe0b242f7c7a87e7f5b2de305.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/8ef0d9f2c0327a0045e2e92a80cd9f8a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/91665c93b72f55b2e4f1048fc8289d04.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/91f9fec9b080c74297a55c392b5f40a4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/9bf8d7d48a8543f9d4e60aa9da5e9ef9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/a4db53c680ab731e9aa1eba01398bcac.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/a56ff1a378b80c51b65395011b05bd87.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/a878dbebc902328b41dbf02aa87abb58.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/ad62cfd33e3870262d6bf5331c1f13b0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/ae385516bf05975c06778418ba30dc0a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/b1553ff2787f1055807a8058fe1f8d99.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/bb9bc609d75ca1c73b0ab3da8d89d3fe.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/c422e39e579b0c8896e9d9fc9a2ca8ac.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/c5daf8f412cb6470ad672ceb57717192.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/c8145db7ac25fc6cbe4dada249230970.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/d18f655c3fce66ca401d5f38b48c89af.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/d45959550312221e15fde04690b18acd.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/dbd90a665ea6f292f36ebdb3d442826d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/de81daf004a31370f811e649f9a6252a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/df343f6b84a0ed60c40db9e2cede73c1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/e58cc5ca94270acaceed13bc82dfedf7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/e6a2c4d36d6a52cadca1dfeca545afb0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/e7896283fcae240c9abb874a70a5afd2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/e7ba959de901f17d3f72929c945df002.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/eb373961a9e663f29108e296d307bcb8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/ecbc7b96b9ec7951187d0da02230773d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/f18a6d1cde4b205199de8729a6637b42.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/f3840c3e3fb9af1a9d9a815e1c2adcf9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/fb09f481d40c4d3c0861a46bd2dc52c0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/fdac69c3eee7bd0427535354eae235a4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/ffd5a146054a13ce7bd23f9ed8612e7c.jpg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,39 +110,27 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
-      <executable />
+      <executable path="composer" />
     </execution>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/EventBundle/Controller/EvenementController.php">
+        <entry file="file://$PROJECT_DIR$/app/config/config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="82" column="80" selection-start-line="82" selection-start-column="80" selection-end-line="82" selection-end-column="80" />
-              <folding>
-                <element signature="e#42#75#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="620">
+              <caret line="84" column="14" selection-start-line="84" selection-start-column="14" selection-end-line="84" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/EventBundle/Resources/config/routing/evenement.yml">
+        <entry file="file://$PROJECT_DIR$/src/EventBundle/Controller/QrController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="24" column="58" selection-start-line="24" selection-start-column="58" selection-end-line="24" selection-end-column="58" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/EventBundle/Entity/Evenement.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2688">
-              <caret line="114" column="28" selection-start-line="114" selection-start-column="20" selection-end-line="114" selection-end-column="28" />
+            <state relative-caret-position="404">
+              <caret line="84" selection-start-line="84" selection-end-line="84" />
               <folding>
-                <element signature="e#38#86#0#PHP" expanded="true" />
+                <element signature="e#42#99#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -109,35 +139,77 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/EventBundle/Repository/EvenementRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="34" column="36" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="36" />
+            <state relative-caret-position="173">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/EventBundle/Resources/views/evenement/participer.html.twig">
+        <entry file="file://$PROJECT_DIR$/src/EventBundle/Repository/ScoreRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="46" column="166" selection-start-line="46" selection-start-column="166" selection-end-line="46" selection-end-column="166" />
+            <state relative-caret-position="240">
+              <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/EventBundle/Repository/TrophetRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/EventBundle/Resources/views/evenement/back.html.twig">
+        <entry file="file://$PROJECT_DIR$/src/LoginBundle/Repository/UserRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="85" column="76" selection-start-line="85" selection-start-column="76" selection-end-line="85" selection-end-column="76" />
+            <state relative-caret-position="147">
+              <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/front/autre/autre.html.twig">
+        <entry file="file://$PROJECT_DIR$/src/ForumBundle/Repository/CommentaireRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="313" selection-start-line="313" selection-end-line="313" selection-end-column="67" />
+            <state relative-caret-position="480">
+              <caret line="20" column="108" selection-start-line="20" selection-start-column="108" selection-end-line="20" selection-end-column="108" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ForumBundle/Resources/config/routing.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="14" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ForumBundle/Entity/Commentaire.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="792">
+              <caret line="34" column="99" selection-start-line="34" selection-start-column="99" selection-end-line="34" selection-end-column="99" />
+              <folding>
+                <element signature="e#38#70#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ForumBundle/Entity/Sujet.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="960">
+              <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="99" />
+              <folding>
+                <element signature="e#38#70#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -146,28 +218,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>for</find>
-      <find>&lt;body</find>
-      <find>formation</find>
-      <find>marg</find>
-      <find>eve</find>
-      <find>projet</find>
-      <find>equipes</find>
-      <find>$event</find>
-      <find>eveneme</find>
-      <find>find(</find>
-      <find>evenement</find>
-      <find>titr</find>
-      <find>$evenements = $em-&gt;getRepository('EventBundle:Evenement')-&gt;findAll();</find>
-      <find>getT</find>
-      <find>Product</find>
-      <find>evene</find>
-      <find>showbac</find>
-      <find>table</find>
-      <find>part</find>
-      <find>nav-icon1</find>
-      <find>edit</find>
-      <find>demo</find>
       <find>array</find>
       <find>inv</find>
       <find>len</find>
@@ -176,6 +226,28 @@
       <find>jq</find>
       <find>dum</find>
       <find>showb</find>
+      <find>dele</find>
+      <find>img</find>
+      <find>black</find>
+      <find>name</find>
+      <find>Skies\QRcodeBundle\SkiesQRcodeBundle</find>
+      <find>ssl</find>
+      <find>wait</find>
+      <find>ex</find>
+      <find>attr</find>
+      <find>post</find>
+      <find>clearfix</find>
+      <find>add</find>
+      <find>form</find>
+      <find>arra</find>
+      <find>for</find>
+      <find>sujet</find>
+      <find>h</find>
+      <find>Doctrine\DBAL\Types\TextType</find>
+      <find>d</find>
+      <find>supprime</find>
+      <find>date</find>
+      <find>forum</find>
     </findStrings>
     <replaceStrings>
       <replace>photo</replace>
@@ -185,24 +257,12 @@
       <replace>trophet</replace>
       <replace>users</replace>
       <replace>rr</replace>
+      <replace>white</replace>
+      <replace>commentaire</replace>
     </replaceStrings>
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
-      <command text="s debug:router " />
-      <command text="s fos:user:promote tahtouh ROLE_ADMIN" />
-      <command text="s debug:router " />
-      <command text="s generate:bundle" />
-      <command text="c dump-autoload" />
-      <command text="s doctrine:generate:entity " />
-      <command text="s doctrine:schema:update --force" />
-      <command text="s doctrine:generate:crud EventBundle:Evenement" />
-      <command text="c dump-autoload" />
-      <command text="s doctrine:generate:entities evenement" />
-      <command text="s doctrine:schema:update --force" />
-      <command text="s doctrine:generate:entities EventBundle:evenement" />
-      <command text="s doctrine:generate:form EventBundle:Evenement" />
-      <command text="s debug:router " />
       <command text="s doctrine:generate:entity " />
       <command text="s doctrine:schema:update --force" />
       <command text="s doctrine:generate:form EventBundle:Score" />
@@ -214,44 +274,32 @@
       <command text="s fos:user:promote hmed ROLE_ADMIN" />
       <command text="s fos:user:promote taha ROLE_ADMIN" />
       <command text="s doctrine:schema:update --force" />
+      <command text="c dump-autoload" />
+      <command text="c update " />
+      <command text="s swiftmailer:email:send" />
+      <command text="c dump-autoload" />
+      <command text="s swiftmailer:email:send" />
+      <command text="c dump-autoload" />
+      <command text="s generate:bundle" />
+      <command text="c dump-autoload" />
+      <command text="s doctrine:generate:entity " />
+      <command text="s doctrine:schema:update --force" />
+      <command text="s doctrine:generate:form ForumBundle:Sujet" />
+      <command text="s doctrine:generate:form ForumBundle:Commentaire" />
+      <command text="s doctrine:schema:update --force" />
+      <command text="s doctrine:schema:update --force " />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php" />
-        <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Profile/edit_content.html.twig" />
-        <option value="$PROJECT_DIR$/src/LoginBundle/Form/ProfileFormType.php" />
-        <option value="$PROJECT_DIR$/app/config/config.yml" />
-        <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register_content.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/ChangePassword/change_password.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Profile/edit.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/confirmed.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login_content.html.twig" />
-        <option value="$PROJECT_DIR$/app/config/routing.yml" />
-        <option value="$PROJECT_DIR$/src/EventBundle/Resources/views/evenement/update.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
-        <option value="$PROJECT_DIR$/src/LoginBundle/Controller/UserController.php" />
-        <option value="$PROJECT_DIR$/src/EventBundle/Resources/views/evenement/show.html.twig" />
-        <option value="$PROJECT_DIR$/src/EventBundle/Resources/views/evenement/add.html.twig" />
-        <option value="$PROJECT_DIR$/src/LoginBundle/Controller/RegistrationController.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/front/index.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/layout.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/front/autre/autre.html.twig" />
-        <option value="$PROJECT_DIR$/src/EventBundle/Entity/Score.php" />
-        <option value="$PROJECT_DIR$/src/EventBundle/Form/EditEventType.php" />
         <option value="$PROJECT_DIR$/src/EventBundle/Resources/views/trophet/add.html.twig" />
         <option value="$PROJECT_DIR$/src/EventBundle/Resources/views/trophet/edit.html.twig" />
         <option value="$PROJECT_DIR$/src/EventBundle/Resources/config/routing/trophet.yml" />
         <option value="$PROJECT_DIR$/src/EventBundle/Form/TrophetType.php" />
-        <option value="$PROJECT_DIR$/src/EventBundle/Controller/TrophetController.php" />
         <option value="$PROJECT_DIR$/src/EventBundle/Resources/views/trophet/back.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login.html.twig" />
         <option value="$PROJECT_DIR$/src/LoginBundle/Resources/config/routing.yml" />
@@ -261,21 +309,44 @@
         <option value="$PROJECT_DIR$/src/EventBundle/Controller/ParticipantController.php" />
         <option value="$PROJECT_DIR$/src/EventBundle/Form/EvenementType.php" />
         <option value="$PROJECT_DIR$/src/EventBundle/Resources/views/evenement/inviter.hrml.twig" />
-        <option value="$PROJECT_DIR$/src/EventBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/app/Resources/views/back/index.html.twig" />
-        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/src/EventBundle/Entity/Evenement.php" />
         <option value="$PROJECT_DIR$/src/LoginBundle/Entity/User.php" />
         <option value="$PROJECT_DIR$/src/EventBundle/Resources/views/evenement/edit.html.twig" />
         <option value="$PROJECT_DIR$/src/LoginBundle/Controller/ProfileController.php" />
-        <option value="$PROJECT_DIR$/src/EventBundle/Resources/views/evenement/index.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Profile/show.html.twig" />
         <option value="$PROJECT_DIR$/src/EventBundle/Resources/views/evenement/participer.html.twig" />
         <option value="$PROJECT_DIR$/src/LoginBundle/Repository/UserRepository.php" />
         <option value="$PROJECT_DIR$/src/EventBundle/Resources/config/routing/evenement.yml" />
         <option value="$PROJECT_DIR$/src/EventBundle/Repository/EvenementRepository.php" />
+        <option value="$PROJECT_DIR$/src/EventBundle/Controller/TrophetController.php" />
         <option value="$PROJECT_DIR$/src/EventBundle/Controller/EvenementController.php" />
+        <option value="$PROJECT_DIR$/src/EventBundle/Resources/views/evenement/index.html.twig" />
+        <option value="$PROJECT_DIR$/app/config/routing.yml" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
+        <option value="$PROJECT_DIR$/src/EventBundle/Resources/config/routing.yml" />
+        <option value="$PROJECT_DIR$/src/EventBundle/Controller/MailAnnQRController.php" />
+        <option value="$PROJECT_DIR$/vendor/convertio/convertio-php/src/Convertio.php" />
+        <option value="$PROJECT_DIR$/app/AppKernel.php" />
+        <option value="$PROJECT_DIR$/app/config/config.yml" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/app/config/parameters.yml" />
+        <option value="$PROJECT_DIR$/src/EventBundle/Resources/views/mail/test.html.twig" />
+        <option value="$PROJECT_DIR$/src/EventBundle/Resources/views/mail/qr.html.twig" />
+        <option value="$PROJECT_DIR$/src/EventBundle/Resources/config/routing/mailQr.yml" />
         <option value="$PROJECT_DIR$/src/EventBundle/Resources/views/evenement/back.html.twig" />
+        <option value="$PROJECT_DIR$/src/EventBundle/Controller/QrController.php" />
+        <option value="$PROJECT_DIR$/src/ForumBundle/Form/SujetType.php" />
+        <option value="$PROJECT_DIR$/src/ForumBundle/Entity/Sujet.php" />
+        <option value="$PROJECT_DIR$/src/ForumBundle/Resources/config/routing.yml" />
+        <option value="$PROJECT_DIR$/src/ForumBundle/Repository/SujetRepository.php" />
+        <option value="$PROJECT_DIR$/src/ForumBundle/Form/CommentaireType.php" />
+        <option value="$PROJECT_DIR$/src/ForumBundle/Controller/DefaultController.php" />
+        <option value="$PROJECT_DIR$/src/ForumBundle/Repository/CommentaireRepository.php" />
+        <option value="$PROJECT_DIR$/src/ForumBundle/Entity/Commentaire.php" />
+        <option value="$PROJECT_DIR$/src/ForumBundle/Resources/views/Default/sujet.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/front/autre/autre.html.twig" />
+        <option value="$PROJECT_DIR$/src/ForumBundle/Resources/views/Default/index.html.twig" />
       </list>
     </option>
   </component>
@@ -321,6 +392,18 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/common" />
       <path value="$PROJECT_DIR$/vendor/doctrine/collections" />
       <path value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle" />
+      <path value="$PROJECT_DIR$/vendor/yellowskies/qr-code-bundle" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/phpseclib/phpseclib" />
+      <path value="$PROJECT_DIR$/vendor/firebase/php-jwt" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/google/apiclient-services" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/google/apiclient" />
+      <path value="$PROJECT_DIR$/vendor/google/auth" />
+      <path value="$PROJECT_DIR$/vendor/convertio/convertio-php" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -337,6 +420,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -353,31 +437,7 @@
               <item name="velo" type="b2602c69:ProjectViewProjectNode" />
               <item name="velo" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="velo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="velo" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="velo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="velo" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="front" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="velo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="velo" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="front" type="462c0819:PsiDirectoryNode" />
-              <item name="autre" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="velo" type="b2602c69:ProjectViewProjectNode" />
@@ -388,33 +448,36 @@
               <item name="velo" type="b2602c69:ProjectViewProjectNode" />
               <item name="velo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="EventBundle" type="462c0819:PsiDirectoryNode" />
+              <item name="LoginBundle" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="velo" type="b2602c69:ProjectViewProjectNode" />
               <item name="velo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="EventBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="velo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="velo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="EventBundle" type="462c0819:PsiDirectoryNode" />
+              <item name="LoginBundle" type="462c0819:PsiDirectoryNode" />
               <item name="Repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="velo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="velo" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="velo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="velo" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="yellowskies" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Symfon/Symfony/examen(Hotel-Reservation)" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -427,13 +490,13 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\velo\app\Resources" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\velo\src\EventBundle\Resources\views" />
       <recent name="C:\wamp64\www\velo\src\LoginBundle\Form" />
       <recent name="C:\wamp64\www\velo\app\Resources\FOSUserBundle\views" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\velo\app\Resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -447,6 +510,12 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="phpunit.xml.dist" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -481,22 +550,28 @@
       <workItem from="1581784008331" duration="7432000" />
       <workItem from="1581849898009" duration="11285000" />
       <workItem from="1581886410063" duration="7608000" />
+      <workItem from="1581956670663" duration="15327000" />
+      <workItem from="1582051136741" duration="17863000" />
+      <workItem from="1582122596511" duration="29008000" />
+      <workItem from="1582156306286" duration="1066000" />
+      <workItem from="1582186465202" duration="1531000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201791000" />
+    <option name="totallyTimeSpent" value="266586000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21375267" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22441365" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Inspection Results" order="0" weight="0.32998884" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
-      <window_info anchor="bottom" id="Run" order="3" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49946696" weight="0.32998884" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -504,9 +579,9 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Command Line Tools Console" order="11" visible="true" weight="0.32887402" />
-      <window_info anchor="bottom" id="Terminal" order="12" weight="0.32998884" />
-      <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
+      <window_info anchor="bottom" id="Command Line Tools Console" order="11" weight="0.32887402" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.4989339" weight="0.32998884" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.5010661" side_tool="true" weight="0.32998884" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -517,282 +592,124 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/LoginBundle/Form/UserType.php">
+    <entry file="file://$PROJECT_DIR$/vendor/yellowskies/qr-code-bundle/DependencyInjection/Configuration.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="19" column="55" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LoginBundle/Form/RegistrationType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register_content.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="16" column="55" lean-forward="true" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EventBundle/Resources/views/Default/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EventBundle/Resources/config/routing/trophet.yml" />
-    <entry file="file://$PROJECT_DIR$/src/EventBundle/Resources/views/trophet/edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EventBundle/Resources/views/trophet/add.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="4" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EventBundle/Resources/views/evenement/add.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="58" column="19" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EventBundle/Entity/Trophet.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
+        <state relative-caret-position="264">
           <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login_content.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="23" column="102" selection-start-line="23" selection-start-column="102" selection-end-line="23" selection-end-column="102" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" column="61" selection-start-line="3" selection-start-column="61" selection-end-line="3" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EventBundle/Form/TrophetType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="17" column="57" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LoginBundle/Controller/RegistrationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1248">
-          <caret line="74" selection-end-line="120" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Controller/ProfileController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="50" column="33" lean-forward="true" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EventBundle/Resources/views/trophet/back.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EventBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="13" lean-forward="true" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EventBundle/Form/ScoreType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="6" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LoginBundle/Controller/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#42#88#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EventBundle/Controller/TrophetController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="61" column="75" selection-start-line="61" selection-start-column="75" selection-end-line="61" selection-end-column="75" />
-          <folding>
-            <element signature="e#42#73#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EventBundle/Resources/views/participant/back.html.twig" />
-    <entry file="file://$PROJECT_DIR$/src/EventBundle/Form/ParticipantType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="55" />
-          <folding>
-            <element signature="e#36#76#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LoginBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="51" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EventBundle/Repository/TrophetRepository.php">
+    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/EventBundle/Controller/ParticipantController.php" />
-    <entry file="file://$PROJECT_DIR$/src/EventBundle/Entity/Score.php">
+    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="45" column="113" selection-start-line="45" selection-start-column="84" selection-end-line="45" selection-end-column="113" />
-        </state>
+        <state relative-caret-position="-72" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/EventBundle/Form/EvenementType.php">
+    <entry file="file://$PROJECT_DIR$/src/EventBundle/Resources/config/routing/evenement.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="25" column="79" selection-start-line="25" selection-start-column="79" selection-end-line="25" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EventBundle/Resources/views/evenement/show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="811">
-          <caret line="44" column="50" selection-start-line="44" selection-start-column="50" selection-end-line="44" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EventBundle/Repository/ScoreRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="28" column="6" lean-forward="true" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/front/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="235" column="82" selection-start-line="235" selection-start-column="82" selection-end-line="235" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/back/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="58" column="123" selection-start-line="58" selection-start-column="123" selection-end-line="58" selection-end-column="123" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EventBundle/Resources/views/evenement/edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EventBundle/Form/EditEventType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EventBundle/Resources/views/trophet/display.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="20" column="39" selection-end-line="34" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LoginBundle/Controller/ProfileController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="619">
-          <caret line="47" column="107" selection-start-line="47" selection-start-column="107" selection-end-line="47" selection-end-column="107" />
-          <folding>
-            <element signature="e#6#86#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LoginBundle/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="788">
-          <caret line="59" column="29" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="29" />
-          <folding>
-            <element signature="e#38#86#0#PHP" expanded="true" />
-          </folding>
+        <state>
+          <caret selection-end-line="3" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/EventBundle/Resources/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="19" selection-start-line="19" selection-end-line="21" selection-end-column="60" />
+        <state relative-caret-position="144">
+          <caret line="6" column="21" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LoginBundle/Repository/UserRepository.php">
+    <entry file="file://$PROJECT_DIR$/src/EventBundle/Controller/Convertio.php" />
+    <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LoginBundle/Controller/RegistrationController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="744">
-          <caret line="31" column="82" selection-start-line="31" selection-start-column="82" selection-end-line="31" selection-end-column="82" />
+        <state relative-caret-position="597">
+          <caret line="30" column="6" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
+          <folding>
+            <element signature="e#123#186#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/FOSUserBundle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/twig/twig/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-432" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/yellowskies/qr-code-bundle/composer.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/convertio/convertio-php/autoload.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/composer.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/convertio/convertio-php/composer.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="22" column="55" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="55" />
+          <folding>
+            <element signature="e#7#66#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/convertio/convertio-php/src/Convertio.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="148" column="24" selection-start-line="148" selection-start-column="20" selection-end-line="148" selection-end-column="24" />
+          <folding>
+            <element signature="e#96#110#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EventBundle/Resources/views/mail/test.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="1" column="78" selection-start-line="1" selection-start-column="78" selection-end-line="1" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EventBundle/Resources/views/mail/qr.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="22" column="77" selection-start-line="22" selection-start-column="77" selection-end-line="22" selection-end-column="77" />
+          <folding>
+            <element signature="n#style#0;n#h2#0;n#article#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="30" column="41" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/EventBundle/Entity/Evenement.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2688">
+        <state relative-caret-position="1099">
           <caret line="114" column="28" selection-start-line="114" selection-start-column="20" selection-end-line="114" selection-end-column="28" />
           <folding>
             <element signature="e#38#86#0#PHP" expanded="true" />
@@ -800,10 +717,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/EventBundle/Resources/config/routing/evenement.yml">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="24" column="58" selection-start-line="24" selection-start-column="58" selection-end-line="24" selection-end-column="58" />
+        <state relative-caret-position="240">
+          <caret line="10" column="33" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="33" />
+          <folding>
+            <element signature="e#40#97#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LoginBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EventBundle/Form/EvenementType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EventBundle/Form/TrophetType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EventBundle/Form/ParticipantType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EventBundle/Resources/views/evenement/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="34" column="7" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="31" />
+          <folding>
+            <element signature="e#128#682#0#Twig" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Profile/show_content.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="619">
+          <caret line="50" column="68" selection-start-line="50" selection-start-column="68" selection-end-line="50" selection-end-column="68" />
         </state>
       </provider>
     </entry>
@@ -814,62 +782,175 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/EventBundle/Resources/views/evenement/inviter.html.twig">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/back/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
-          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+          <caret line="22" selection-start-line="22" selection-end-line="22" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/EventBundle/Resources/views/evenement/index.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/ForumBundle/Repository/SujetRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="22" selection-start-line="22" selection-end-line="26" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Profile/show_content.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="50" column="68" selection-start-line="50" selection-start-column="68" selection-end-line="50" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EventBundle/Repository/EvenementRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="34" column="36" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/front/autre/autre.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="313" selection-start-line="313" selection-end-line="313" selection-end-column="67" />
+        <state relative-caret-position="288">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/EventBundle/Controller/EvenementController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="82" column="80" selection-start-line="82" selection-start-column="80" selection-end-line="82" selection-end-column="80" />
+        <state relative-caret-position="434">
+          <caret line="139" column="5" lean-forward="true" selection-start-line="139" selection-start-column="5" selection-end-line="141" selection-end-column="13" />
           <folding>
             <element signature="e#42#75#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/EventBundle/Resources/views/evenement/participer.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/ForumBundle/Form/SujetType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="46" column="166" selection-start-line="46" selection-start-column="166" selection-end-line="46" selection-end-column="166" />
+        <state relative-caret-position="248">
+          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="25" selection-end-column="15" />
+          <folding>
+            <element signature="e#36#76#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/front/autre/autre.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="98" column="56" selection-start-line="98" selection-start-column="56" selection-end-line="98" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ForumBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1176">
+          <caret line="54" column="63" selection-start-line="54" selection-start-column="63" selection-end-line="54" selection-end-column="63" />
+          <folding>
+            <element signature="e#42#77#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ForumBundle/Form/CommentaireType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/EventBundle/Resources/views/evenement/back.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="85" column="76" selection-start-line="85" selection-start-column="76" selection-end-line="85" selection-end-column="76" />
+        <state relative-caret-position="2232">
+          <caret line="93" column="79" selection-start-line="93" selection-start-column="79" selection-end-line="93" selection-end-column="133" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ForumBundle/Resources/views/Default/sujet.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2328">
+          <caret line="97" column="42" selection-start-line="97" selection-start-column="42" selection-end-line="97" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ForumBundle/Resources/views/Default/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1008">
+          <caret line="42" column="58" selection-start-line="42" selection-start-column="58" selection-end-line="42" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EventBundle/Resources/config/routing/mailQr.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ForumBundle/Repository/CommentaireRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="20" column="108" selection-start-line="20" selection-start-column="108" selection-end-line="20" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ForumBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ForumBundle/Entity/Commentaire.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="34" column="99" selection-start-line="34" selection-start-column="99" selection-end-line="34" selection-end-column="99" />
+          <folding>
+            <element signature="e#38#70#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ForumBundle/Entity/Sujet.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="99" />
+          <folding>
+            <element signature="e#38#70#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="84" column="14" selection-start-line="84" selection-start-column="14" selection-end-line="84" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EventBundle/Controller/QrController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="84" selection-start-line="84" selection-end-line="84" />
+          <folding>
+            <element signature="e#42#99#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EventBundle/Repository/EvenementRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EventBundle/Repository/ScoreRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EventBundle/Repository/TrophetRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LoginBundle/Repository/UserRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
         </state>
       </provider>
     </entry>

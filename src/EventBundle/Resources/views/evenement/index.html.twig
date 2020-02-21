@@ -25,7 +25,7 @@
             {{ message }}
         </div>
     {% endfor %}
-
+{% if evenements %}
     {#Ranking#}
     <link rel='stylesheet' type='text/css' media='screen' href='{{ asset("taha/rank/main.css") }}'>
     <div class="leaderboard" id="leaderboard"  style="  position: fixed;z-index: 1;right: 0;visibility: hidden;">
@@ -210,4 +210,5 @@ else
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    {% endif %}
 {% endblock %}

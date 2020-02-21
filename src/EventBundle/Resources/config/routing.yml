@@ -2,6 +2,10 @@ event_evenement:
     resource: "@EventBundle/Resources/config/routing/evenement.yml"
     prefix:   /evenement
 
+mail)qr:
+    resource: "@EventBundle/Resources/config/routing/mailQr.yml"
+    prefix:   /mailQR
+
 add_evenement:
     path:   /admin/add_evenement
     defaults: { _controller: EventBundle:Evenement:add }

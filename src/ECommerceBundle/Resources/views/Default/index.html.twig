@@ -1,0 +1,327 @@
+{% extends "back/index.html.twig" %}
+
+{% block body %}
+
+    <link rel="stylesheet" type="text/css" href="{{ asset("back/fahd/cs-skin-elastic.css") }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset("back/fahd/style.css") }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset("back/fahd/AfficherProduitCss.css") }}">
+    <script src="{{ asset('jquery.js') }}"></script>
+
+<div class="content" >
+    <!-- EKTOB HOUNI -->
+    <div name="product_catalog_list" id="product_catalog_list" method="post" > <!-- action="supprimerProduit.php" -->
+        <div class="row">
+            <div class="col-md-12">
+                <input type="hidden" name="filter_category" value="">
+            </div>
+        </div>
+
+        <div class="row">
+
+            <!--<div class="col-md-12">--> <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <!--<div class="table-responsive">--> <div class="card">
+                    <h7 class="card-header" style="font-weight : bolder">Add Product</h7>
+    <div id="form1">
+        <div class="card-body"  id="employee_table"> <!-- class="table-responsive" -->
+
+            {{ form_start(form) }}
+
+    <div class="form-group row">
+        <label class="col-12 col-sm-3 col-form-label text-sm-right" >Refrence</label>
+        <div class="col-12 col-sm-8 col-lg-6">
+            {{ form_widget(form.refrence,{'attr' :{'id':'Reftext','name':'refrence','class':'form-control','placeholder':'Ref...','onblur':'RefVerif(this.id,"textRef","Reftext_ck");' } }) }}
+            <input type="hidden" class="CHECK" required="" id="Reftext_ck">
+        </div>
+        <p id="textRef" class="ErrFah"></p>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-12 col-sm-3 col-form-label text-sm-right" >Name</label>
+        <div class="col-12 col-sm-8 col-lg-6">
+            {{ form_widget(form.name,{'attr' :{'id':'Nomtext','name':'name','class':'form-control','placeholder':'Nom...','onblur':'CheckInfoLettre(this.id,"textNom","Nomtext_ck");' } }) }}
+            <input type="hidden" class="CHECK" required="" id="Nomtext_ck">
+        </div>
+        <p id="textNom" class="ErrFah"></p>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-12 col-sm-3 col-form-label text-sm-right" >Category</label>
+        <div class="col-12 col-sm-8 col-lg-6">
+            {{ form_widget(form.category,{'attr' :{'id':'cattext','name':'categorie','class':'form-control' } }) }}
+            {#<option value="aa"  selected disabled="">aa</option>#}
+            <input type="hidden" class="" required="" id="Cattext_ck">
+            <datalist id="id_categorie">
+
+            </datalist>
+        </div>
+        <p id="textcat" class="ErrFah"></p>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-12 col-sm-3 col-form-label text-sm-right" id="PrixTTCtext" >Price</label>
+        <div class="col-12 col-sm-8 col-lg-6">
+            {{ form_widget(form.price,{'attr' :{'id':'Prixtext','name':'prixHT','class':'form-control','placeholder':'','value':'0','data-parsley-maxlength':'6','onblur':'FloatVerif(this.id,"textPrix","Prixtext_ck");' } }) }}
+            <input type="hidden" class="CHECK" required="" id="Prixtext_ck">
+        </div>
+        <p id="textPrix" class="ErrFah"></p>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-12 col-sm-3 col-form-label text-sm-right">Stock</label>
+        <div class="col-12 col-sm-8 col-lg-6">
+            {{ form_widget(form.stock,{'attr' :{'id':'Qutext','name':'quantite','class':'form-control','placeholder':'','value':'0','data-parsley-maxlength':'6','onblur':'VerifQuantite(this.id,"textquantite","Quantitetext_ck");' } }) }}
+            <input type="hidden" class="CHECK" required="" id="Quantitetext_ck">
+        </div>
+        <p id="textquantite" class="ErrFah"></p>
+    </div>
+
+{#
+    <div class="form-group row">
+        <label class="col-12 col-sm-3 col-form-label text-sm-right">date Added</label>
+        <div class="col-12 col-sm-8 col-lg-6">
+            <input type="date" id="ddate" name="date" data-parsley-min="6" placeholder="" class="form-control" value="" onkeydown="date_chk(this)" readonly> <!-- -->
+            {{ form_widget(form.date,{'attr' :{'id':'ddate','name':'date','class':'form-control','placeholder':'' ,'data-parsley-min':'6'  } }) }}
+        </div>
+    </div>
+#}
+
+    <div class="form-group row">
+        <label class="col-12 col-sm-3 col-form-label text-sm-right" >Description</label>
+        <div class="col-12 col-sm-8 col-lg-6">
+            {{ form_widget(form.description,{'attr' :{'name':'description','class':'form-control','placeholder':'','style':'height: 250px' } }) }}
+        </div>
+    </div>
+
+            <input type="hidden" value="false" id="wew">
+
+    <div class="form-group row text-right">
+        <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
+
+            <input type="submit" id="MainbtnSubmit" class="btn btn-space btn-primary" name="ajouter" value="Add Product">
+            {# {{ form_widget(form.AddProduct ,{'attr' :{'id':'MainbtnSubmit','class':'btn btn-space btn-primary' } }) }}#}
+ <a class="btn btn-space btn-secondary" href="{{ path('Add_Product') }}">Cancel</a>
+</div>
+    </div>
+
+
+
+{{ form_end(form) }}
+    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+<script>
+var next = false;
+$(document).ready(function(){
+//alert('a');
+ //    var path = "{# path('next') #}";
+
+ $("#MainbtnSubmit").click(function (e) {
+         //errors();
+         e.preventDefault();
+      //   $('#ECommerceBundle_product_price').trigger('blur');
+         $('#ECommerceBundle_product_price').trigger('blur');
+         $('#ECommerceBundle_product_stock').trigger('blur');
+         $('#ECommerceBundle_product_refrence').trigger('blur');
+         $('#ECommerceBundle_product_category').trigger('blur');
+         $('#ECommerceBundle_product_name').trigger('blur');
+       //  alert(next);
+     if ($('#wew').val() === 'true'){
+     //alert('MainbtnSubmit clicked');
+     //alert(document.getElementById('testbundle_product_refrence').value);
+     var refrence = $('#ECommerceBundle_product_refrence').val() ;
+     var name = $('#ECommerceBundle_product_name').val() ;
+     var category = $('#ECommerceBundle_product_category').val() ;
+     var price = $('#ECommerceBundle_product_price').val() ;
+     var stock = $('#ECommerceBundle_product_stock').val() ;
+     var description = $('#ECommerceBundle_product_description').val() ;
+//alert(refrence+'  '+stock);
+     //var Form_Data = new FormData (this);
+     //e.preventDefault();
+     $.ajax({
+         cache:false,
+         //url: path,
+         data : {refrence:refrence,name:name,category:category,price:price,stock:stock,description:description},
+         url: '{{ path('next') }}',
+         method: "POST",
+         success: function(data) {
+             //alert ('about to html it');
+             $('#form1').html(data);
+            // alert ('success');
+         }
+     })
+ }
+     /*else{
+         alert('wew');
+         //e.preventDefault();
+     }*/
+
+ }
+     );
+
+});
+/*
+function RefVerif(a,b,c) {
+    alert(a);
+}*/
+</script>
+    <style>
+        .ErrFah{
+            font-size: 15px ;
+            color: red;
+        }
+    </style>
+    <script>
+        //$('#Ssubmit').click(function () {
+        function errors(){
+            var i=0;
+            var error = false ;
+            var checke ='';
+
+            jQuery.each($('.CHECK'), function() {
+                i++;
+                checke = $(this).val();
+                //alert(checke+i);
+                if( checke !== "true"){
+                    // alert('buton');
+                    error = true ;
+                   // var button = $('#Ssubmit');
+                    //button.prop('type','button');
+                    next = false;
+                    $('#wew').val('false');
+                }
+            });
+            if (!error)
+            {
+                //alert('submit');
+                //var button = $('#Ssubmit');
+                next = true;
+                $('#wew').val('true');
+                //button.prop('type', 'submit');
+            }
+        //alert(next);
+
+        }
+        //});
+        function RefVerif(s1,s2,s3) {
+
+            var regex = /^[a-zA-Z0-9]*$/;
+            var data=document.getElementById(s1) ;
+            var datar = data.value.substring(0,1);
+            var datanr =data.value.substring(1,data.value.length);
+
+            if ( !regex.test(data.value) || data.value.length<3) {
+                data.style.border = "1px solid #FF0000";
+                document.getElementById(s2).innerHTML="*Referance invalide";
+                document.getElementById(s3).value="false";
+            }
+            else {data.style.border = "";
+                document.getElementById(s2).innerHTML="";
+                document.getElementById(s3).value="true";
+            }
+            //alert();
+            //document.getElementById("Re").value = document.getElementById('Reftext').value;
+
+            errors();
+
+        }
+        function CheckInfoLettre(s1,s2,s3)
+        {   var data=document.getElementById(s1) ;
+            var regex = /^[a-zA-Z ]{3,30}$/;
+            if(!regex.test(data.value) || data.value== "")
+            {
+                data.style.border = "1px solid #FF0000";
+                document.getElementById(s2).innerHTML="*Nom invalide";
+                document.getElementById(s3).value="false";
+                errors();
+                return false;
+            }
+            else
+            {
+                data.style.border = "";
+                document.getElementById(s2).innerHTML="";
+                document.getElementById(s3).value="true";
+                errors();
+                return true;
+            }
+
+        }
+
+        function CheckInfoLettrec(s1,s2,s3)
+        {   var data=document.getElementById(s1) ;
+            var regex = /^[a-zA-Z ]{3,30}$/;
+            if(!regex.test(data.value) || data.value== "")
+            {
+                data.style.border = "1px solid #FF0000";
+                document.getElementById(s2).innerHTML="*Categorie invalide";
+                document.getElementById(s3).value="false";
+                errors();
+                return false;
+            }
+            else
+            {
+                data.style.border = "";
+                document.getElementById(s2).innerHTML="";
+                document.getElementById(s3).value="true";
+                errors();
+                return true;
+            }
+
+        }
+
+        function FloatVerif(s1,s2,s3) {
+
+            var data = document.getElementById(s1);
+            var datanr =data.value.substring(0,1);
+
+            //alert(datanr);
+            //data.value="0";
+            var regex = /^-?\d*(\.\d+)?$/;
+            // var datan = data.value.substring(data.value.indexOf("."),data.value.length) ;
+
+            if (!regex.test(data.value) || data.value == "" || datanr == "-" || datanr == 0) {
+                data.style.border = "1px solid #FF0000";
+                document.getElementById(s2).innerHTML = "*Prix invalide";
+                document.getElementById(s3).value="false";
+                errors();
+                return false;
+            } else {
+                data.style.border = "";
+                document.getElementById(s2).innerHTML = "";
+                document.getElementById(s3).value="true";
+                errors();
+                return true;
+            }
+
+
+        }
+        function VerifQuantite(s1,s2,s3) {
+            var data=document.getElementById(s1);
+            var regex =/^[1-9][0-9]?$|^100$/ ;
+
+            if (!regex.test(data.value) || data.value == "" ) {
+                data.style.border = "1px solid #FF0000";
+                document.getElementById(s2).innerHTML = "*Verifier la quantité";
+                document.getElementById(s3).value="false";
+                errors();
+
+                return false;
+            } else {
+                data.style.border = "";
+                document.getElementById(s2).innerHTML = "";
+                document.getElementById(s3).value="true";
+                errors();
+
+                return true;
+            }
+
+        }
+</script>
+{% endblock %}

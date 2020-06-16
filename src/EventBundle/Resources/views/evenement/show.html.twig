@@ -1,0 +1,48 @@
+{% extends "front/autre/autre.html.twig" %}
+
+{% block body %}
+    <h1>Evenement</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ evenement.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ evenement.titre }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ evenement.description }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ evenement.image }}</td>
+            </tr>
+            <tr>
+                <th>Date debut</th>
+                <td>{% if evenement.dateDebut %}{{ evenement.dateDebut|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Date creation</th>
+                <td>{% if evenement.dateCreation %}{{ evenement.dateCreation|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Max participant</th>
+                <td>{{ evenement.maxParticipant }}</td>
+            </tr>
+            <tr>
+                <th>Localisation</th>
+                <td>{{ evenement.localisation }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('list_evenement_front') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,278 @@
+{% extends "front/autre/autreautre.html.twig" %}
+{% block cartn %} {{ cart|length }}  {% endblock %}
+{% block titre %} Panier  {% endblock %}
+
+{% block css %}
+    {#<link rel="stylesheet" type="text/css" href="{{ asset('autre/styles/bootstrap-4.1.2/bootstrap.min.css') }}">
+    <link href="{{ asset('autre/plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('autre/plugins/flexslider/flexslider.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('autre/styles/product.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('autre/styles/product_responsive.css') }}">#}
+
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/fahd/assets/styles/bootstrap-4.1.2/bootstrap.min.css') }}">
+    <link href="{{ asset('back/fahd/assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/fahd/assets/styles/cart.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/fahd*assets/styles/cart_responsive.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ asset("back/fahd/AfficherProduitCss.css") }}">
+
+    <script src="{{ asset('jquery.js') }}"></script> {# SCRIPTTTTTTTTTTTT #}
+{% endblock %}
+
+{% block searsh %}
+    <div class="header_search">
+        <form action="{{ path('Searsh_Product_Front') }}" id="header_search_form">
+            <input type="text" name="input_searsh" class="search_input" placeholder="Recherche..." required="required">
+            <button class="header_search_button"><img src="{{ asset('autre/images/search.png') }}" alt=""></button>
+            <input type="hidden" name="categorys" value="All">
+        </form>
+    </div>
+{% endblock %}
+
+{% block body %}
+    <style> input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            opacity: 1;}
+        input[type="number"], input[type="text"], textarea, select {
+            outline: none;
+            color: transparent;
+            text-shadow: 0 0 0 black;}
+        .QQQ{
+            width:60px;
+            height: 27px;
+            border: none;
+            text-align-last: center;
+        }
+    </style>
+
+    <div align="center" name="Banniere">
+        <div class="container1">
+            <div class="banner">
+                {#<img src="../../../Back Office ENACTUS/Les Modules/Markenting - Banniere/ImageBanniereUpload/<?php echo $img ?>" alt="Banniere">#}
+            </div>
+        </div>
+    </div>
+    <div class="cart_section">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="cart_container">
+
+                        {% set vider_panier = true %}
+                        {% set somme = 0 %}
+                        {% if cart != null %}
+                        <!-- Cart Bar -->
+                        <div class="cart_bar">
+                            <ul class="cart_bar_list item_list d-flex flex-row align-items-center justify-content-end">
+
+                                <li class="mr-auto">Produits</li>
+                                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Prix</li>
+                                <li>&nbsp;&nbsp;&nbsp;&nbsp;Quantité</li>
+                                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total</li>
+                                <li>&nbsp;Supprimer</li>
+                            </ul>
+                        </div>
+                        {% for c in cart  %}
+
+    <form action="{{ path('Checkout') }}" method="POST" id="CSF">
+        <!-- Cart Items -->
+        <div class="cart_items">
+            <ul class="cart_items_list">
+
+                <!-- Cart Item -->
+                <li class="cart_item item_list d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-end justify-content-start">
+                    <div class="product d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start mr-auto">
+                        <div>
+                            <div class="product_number"><?php echo $i ;?></div>
+                            <input type="hidden" id="WTF">
+                        </div>
+
+                        <div>
+                            <div class="product_image" id="B<?PHP echo $here['reference']; ?>">
+
+                                <div class="row">
+                                    {% set continue = false %}
+
+                                    {% for image in Images %}
+                                        {% if not continue %}
+                                            {% if image.product.id  == c.product.id %}
+                                                {% set continue = true %}
+                                                <div>
+                                                    <img src="{{ asset(''~image.image) }}" class="img-thumbnail" style="height:80px;width: 80px">
+                                                </div>
+                                            {% endif %}
+                                        {% endif %}
+
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product_name_container">
+                            <div class="product_name"><a href="../assets/product.html">{{ c.product.name }}</a></div>
+                            <div class="product_text">{{ c.product.category }}</div>
+
+                        </div>
+                    </div>
+                    <!--<div class="product_color product_text"><span>Color: </span>beige</div>
+                    <div class="product_size product_text"><span>Size: </span>L</div>-->
+                    <div class="product_price product_text"><span>Price: </span>{{ c.product.price }}&nbsp;DT</div>
+                    <div class="product_quantity_container">
+                        <div class="product_quantity ml-lg-auto mr-lg-auto text-center">
+                            <!-- <span class="product_text product_num">1</span>
+                             <div class="qty_sub qty_button trans_200 text-center"><span>-</span></div>
+                             <div class="qty_add qty_button trans_200 text-center"><span>+</span></div>-->
+                            <input type="number" min="1" class="QQQ" name="QUANTITEES_{{ c.product.refrence }}" value="{{ c.quantity }}" id="{{ c.product.refrence }}" onclick="myfunc55(this.id,this.value,{{ c.product.price }})" >
+                            <input type="hidden" name="{{ c.product.id }}" value="{{ c.product.id }}">
+                            {#onclick="myfunc5(<?php echo $key['ID_Panier'];?>,this.value,'<?PHP echo 'total_'.$here['reference'];?>',<?php echo $here['prix'];?>,<?php echo $key['Quantite'];?>)" onkeyup="myfunc5(<?php echo $key['ID_Panier'];?>,this.value,'<?PHP echo 'total_'.$here['reference'];?>',<?php echo $here['prix'];?>,<?php echo $key['Quantite'];?>)" #}
+                        </div>
+
+
+                        <input type="hidden" name="FRE" value="<?PHP echo $here['reference'];?>">
+
+                    </div>
+
+                    <div class="product_total product_text"><span></span><input type="text" class="indivi_articl" id="total_{{ c.product.refrence }}" value="{{ c.quantity * c.product.price }}" style="width: 115px;border: none" readonly> DT</div>
+        <a  href="{{ path('delete_article',{'id_article':c.id}) }}" title="" class="btn tooltip-link product-edit">
+            <i class="material-icons action-enabled">clear</i></a>
+        </li>
+        </ul>
+        </div>
+        {%  set somme = somme + ( c.quantity * c.product.price ) %}
+        {% endfor %}
+        {% else %}
+            {% set vider_panier = false %}
+            <h1 align="center">Panier vide</h1>
+
+        {% endif %}
+
+
+        <!-- toufa houni -->
+
+
+        <!-- Cart Buttons -->
+        <div class="cart_buttons d-flex flex-row align-items-start justify-content-start">
+            <div class="cart_buttons_inner ml-sm-auto d-flex flex-row align-items-start justify-content-start flex-wrap">
+
+                <div class="button button_clear trans_200">
+                    {% if  vider_panier == true %}
+                    <a href="{{ path('empty_cart') }}">Vider le panier</a>
+                    {% endif %}
+                </div>
+                {% if  vider_panier == false %}
+                    <div class="button button_continue trans_200"><a id="e" href="{{ path("List_Product_Front",{'category':'All'}) }}">Continuer le Shopping</a></div> {#href="{{ path('return_to_products') }}"#}
+                {% else %}                                                          {#prevented default theses goes to => checkout#}
+                        <div class="button button_continue trans_200"><a id="Ahref" href="{{ path("List_Product_Front",{'category':'All'}) }}">Continuer le Shopping</a></div> {#href="{{ path('return_to_products') }}"#}
+                {% endif %}
+
+                <script>
+                    $(document).ready(function()
+                    {$("#Ahref").click(function(e)
+                        {
+                            e.preventDefault();
+                            $("#CSF").submit();
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+
+        </div>
+        </div>
+        </div>
+        <div class="row cart_extra_row">
+            <div class="col-lg-6">
+                <div class="cart_extra cart_extra_1">
+                    <div class="cart_extra_content cart_extra_coupon">
+                        <div class="cart_extra_title">Code de coupon</div>
+                        <div class="coupon_form_container">
+                            <!-- <form action="#" id="coupon_form" class="coupon_form">
+                                <input type="text" class="coupon_input" required="required">
+                                <button class="coupon_button" style="width: 150px;">appliquer</button>
+                            </form> -->
+                        </div>
+                        <div class="coupon_text">Veuillez Saisir le code de votre coupon ici.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 cart_extra_col">
+                <div class="cart_extra cart_extra_2">
+                    <div class="cart_extra_content cart_extra_total">
+
+                        <div class="cart_extra_title">Total du panier</div>
+                        <ul class="cart_extra_total_list">
+                            <li class="d-flex flex-row align-items-center justify-content-start">
+                                <div class="cart_extra_total_title">Total avant livraison</div>
+                                <div class="cart_extra_total_value ml-auto"><input type="text" name="Total_Panier" id="Total_Panier" value="{{ somme }}" style="text-align: right;width: 115px;border: none;background:transparent;" readonly> DT</div>
+                            </li>
+                            <li class="d-flex flex-row align-items-center justify-content-start">
+                                <div class="cart_extra_total_title">Frais de livraison</div>
+                                <div class="cart_extra_total_value ml-auto">Gratuit</div>
+                            </li>
+
+                            {#<li class="d-flex flex-row align-items-center justify-content-start">
+                                <input type="checkbox" id="check_pf" name="payment_radio" class="payment_radio" value="Paiement en Especes" onchange="Func_pf(this.id)">
+                                <!-- <span class="radio_mark"></span>-->
+                                <span class="cart_extra_total_title" >&nbsp;&nbsp;Utiliser mes points </span>
+                            </li>#}
+
+                            <!--<label class="radio_container">
+                                <input type="checkbox" id="radio" name="payment_radio" class="payment_radio" value="Paiement en Especes" >
+                                <span class="radio_mark"></span>
+                                <span class="radio_text">Paiement en Espèces </span>
+                            </label>
+                            <br><br>-->
+                            <li class="d-flex flex-row align-items-center justify-content-start">
+                                <div class="cart_extra_total_title">Total TTC</div>
+                                <div class="cart_extra_total_value ml-auto"><input type="text"   name="Total_Panierez" id="Total_Cart" value="{{ somme }}" style="text-align: right;font-weight: bolder;width: 115px;border: none;background:transparent;" readonly> DT</div>
+                                <input type="hidden" id ="test_check" name="test_check" value="0">
+                            </li>
+                        </ul>
+                        <div class="checkout_button trans_200"> <button type="submit" class="coupon_button" id="PAP" style="width: 100%;">proceder au paiement</button> </div>
+                        <input type="hidden" value="0" name="whichway" id="WW">
+                        </form>
+
+                        <script>
+                            $(document).ready(function()
+                            {$("#PAP").click(function(e)
+                            {e.preventDefault();
+                                $('#WW').val(1);
+                                $("#CSF").submit();
+                            });
+                            });
+                        </script>
+    </div>
+
+    </div>
+    </div>
+    </div>
+
+    </div>
+    </div>
+<script>
+    $(document).ready(function() {
+    });
+        function myfunc55(thisid,thisvalue,thisprice) {
+       // alert(thisid+'   '+thisvalue);
+        //$('#total_'+thisid).val();
+        //alert(thisprice);
+        $('#total_'+thisid).val(parseFloat(thisvalue*thisprice));
+
+        var newsomme = 0;
+            $(".indivi_articl").each(function() {
+                // ...
+                newsomme= parseFloat(newsomme+parseFloat($(this).val()));
+            });
+
+            $('#Total_Panier').val(newsomme);
+            $('#Total_Cart').val(newsomme);
+
+    }
+    </script>
+    <script>
+
+    </script>
+{% endblock %}
+
+

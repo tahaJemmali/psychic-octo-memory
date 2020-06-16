@@ -1,3 +1,7 @@
 Register:
   path:     /register/
   defaults: { _controller: LoginBundle:Registration:register }
+
+profile:
+  path:     /profile/
+  defaults: { _controller: LoginBundle:Profile:show }

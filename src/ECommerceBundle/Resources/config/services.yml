@@ -1,0 +1,4 @@
+services:
+#    e_commerce.example:
+#        class: ECommerceBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

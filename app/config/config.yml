@@ -3,6 +3,9 @@ imports:
     - { resource: security.yml }
     - { resource: services.yml }
     - { resource: "@LoginBundle/Resources/config/services.yml" }
+    - { resource: "@ECommerceBundle/Resources/config/services.yml" }
+    - { resource: "@EventBundle/Resources/config/services.yml" }
+    - { resource: "@ForumBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -62,6 +65,7 @@ doctrine:
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
 
+
 fos_user:
     db_driver: orm # other valid values are 'mongodb' and 'couchdb'
     firewall_name: main
@@ -76,12 +80,32 @@ fos_user:
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport: '%mailer_transport%'
+    transport: gmail
     host: '%mailer_host%'
-    username: '%mailer_user%'
-    password: '%mailer_password%'
-    spool: { type: memory }
+    username: VeloEcommerceSite@gmail.com
+    password: VeloEcommerce123
+    transport: "%mailer_transport%"
+    host:      "%mailer_host%"
+    username:  "%mailer_user%"
+    password:  "%mailer_password%"
+    encryption: "%mailer_encryption%"
+        spool: { type: memory }
 
 sensio_framework_extra:
    router:
         annotations: false
+
+# Windows configuration
+knp_snappy:
+    temporary_folder: FacturePdf
+    pdf:
+        enabled:    true
+        # If you have wkhtmltopdf as an environment variable you don't need to provide the
+        # full path to the executable, use it in the same way as you use in the console
+        #binary:  "wkhtmltopdf"
+        binary:     "\"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe\""
+        options:    []
+    image:
+        enabled:    true
+        binary:     "\"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltoimage.exe\""
+        options:    []

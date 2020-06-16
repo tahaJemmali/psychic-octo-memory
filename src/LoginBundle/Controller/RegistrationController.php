@@ -85,6 +85,8 @@ class RegistrationController extends BaseController
 
                 }
                 $user->setPhoto($TargetPath);
+                $user->setScore(0);
+                $user->setPtsFidelite(0);
 
                 $userManager->updateUser($user);
 

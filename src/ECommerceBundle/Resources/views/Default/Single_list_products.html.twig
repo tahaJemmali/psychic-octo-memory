@@ -1,0 +1,345 @@
+{% extends "front/autre/autreautre.html.twig" %}
+{% block cartn %}{{ cartn|length }}{% endblock %}
+{% block titre %}Produit {% endblock %}
+
+{% block css %}
+	<link rel="stylesheet" type="text/css" href="{{ asset('autre/styles/bootstrap-4.1.2/bootstrap.min.css') }}">
+	<link href="{{ asset('autre/plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="{{ asset('autre/plugins/flexslider/flexslider.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('autre/styles/product.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('autre/styles/product_responsive.css') }}">
+
+	<script src="{{ asset('jquery.js') }}"></script> {# SCRIPTTTTTTTTTTTT #}
+{% endblock %}
+
+{% block searsh %}
+	<div class="header_search">
+		<form action="{{ path('Searsh_Product_Front') }}" id="header_search_form">
+			<input type="text" name="input_searsh" class="search_input" placeholder="Recherche..." required="required">
+			<button class="header_search_button"><img src="{{ asset('autre/images/search.png') }}" alt=""></button>
+			<input type="hidden" name="categorys" value="All">
+		</form>
+	</div>
+{% endblock %}
+
+{% block body %}
+
+	<div class="product">
+		<div class="container">
+			<div class="row" id="fahh">
+				<div class="galleryContainer" id="imme">
+
+					<div id="slideShowContainer">
+						<div class="leftArrow" onclick="plusSlides(-1)"><span class="arrow arrowLeft"></span></div>
+						<div class="rightArrow" onclick="plusSlides(1)"><span class="arrow arrowRight"></span></div>
+						<div class="captionHolder" ><p class="captionText "></p></div>
+
+					{% for  Prod in Product %}
+					{% for image in Images %}
+						{% if image.product.id  == Prod.id %}
+							<div class="imagesHolder">
+								<img src="{{ asset(''~image.image) }}" style="height: 435px;width: 530px" >
+								{#<input type="text" value="imagesHolder">#}
+								<p class="captionText"></p>
+							</div>
+						{% endif %}
+					{% endfor %}
+					{% endfor %}
+				</div>
+				<div id="dotsContainer">
+				</div>
+
+				</div>
+
+				<!-- Product Image -->
+
+				<!-- Product Info -->
+				{% for Prod in Product %}
+				<div class="col-lg-6 product_col">
+					<div class="product_info">
+						<div class="product_name"> {{ Prod.name }}</div>
+
+						<div class="product_category">Categorie {{ Prod.category }} <a href="../assets/category.html"><strong>BMX</strong></a></div>
+						{#<a id="like" href="../../ActionLikeD.php?t=1&amp;p=ref198">J'aime</a>
+						<a id="dislike" href="../../ActionLikeD.php?t=2&amp;p=ref198">Je n'aime pas</a>#}
+						<div class="product_rating_container d-flex flex-row align-items-center justify-content-start">
+							<div class="rating_r rating_r_0 product_rating"> <i></i> <i></i> <i></i> <i></i> <i></i> </div>
+							{#<div id="nbtv" class="product_reviews"> De (0)</div>#}
+
+						</div>                             <div class="product_price">{{ Prod.price }}{#<span>.25</span>#}&nbsp;Dt</div>
+						<br>
+						<form action="{{ path('Add_Cart') }}" method="post" id="form_fahd">
+							<input style="width:30%;" class="form-control" name="quantite_produit" type="number" value="1" min="1">
+							<div style="top:30px;" >
+								<h1>Description :</h1>
+
+									{{ Prod.description }}
+
+								{#<a href="{{ path('panier') }}">omg<a/>#}
+
+							</div>
+							{#<input name="id_Projet" type="hidden" value="P1555781502">#}
+							<input name="id_produit" type="hidden" value="{{ Prod.id }}">
+
+							<!-- <input style="width:200px" class="btn btn-warning" type="submit" value="Ajoute au Panier"> -->
+							<div class="product_buttons" >
+								<div class="text-right d-flex flex-row align-items-start justify-content-start" >
+									<div id="myBtn3" style="width:100%;" class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center">
+
+										<div>
+											<div>
+												<img src="{{ asset('autre/images/cart.svg') }}" class="svg" alt="">
+												<div>+</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div>
+							<br><br>
+							</div>
+{% endfor %}
+							<script>
+								$(document).ready(function()
+								{
+									$("#myBtn3").click(function()
+									{
+										$("#form_fahd").submit();
+									});
+
+								});
+							</script>
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Boxes -->
+	<style>
+		.galleryContainer{
+			width: 100%;
+			height: 500px;
+			max-width: 550px;
+			user-select: none;
+			box-shadow: 0px 0px 3px 1px #00000078;
+			padding: 10px;
+			box-sizing: border-box;
+			margin: 0 auto;
+		}
+		.galleryContainer #slideShowContainer {
+			width: 100%;
+			height: 90%;
+			overflow: hidden;
+			background-color: gainsboro;
+			position: relative;
+		}
+		.galleryContainer #slideShowContainer .imagesHolder {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			opacity:0;
+
+		}
+		.galleryContainer #slideShowContainer .imagesHolder img {
+			width: 100%;
+			height: 100%;
+		}
+		.galleryContainer #slideShowContainer .imagesHolder .captionText {
+			display:none;
+		}
+		.galleryContainer #slideShowContainer .leftArrow,.galleryContainer #slideShowContainer .rightArrow{
+			width: 50px;
+			background: #00000010;
+			position: absolute;
+			left:0;
+			z-index: 1;
+			transition : background 0.5s;
+			height :72px;
+			top : 50%;
+			transform : translateY(-50%);
+			border-top-right-radius: 10px;
+			border-bottom-right-radius: 10px;
+
+		}
+		.galleryContainer #slideShowContainer .rightArrow{
+			left: auto;
+			right: 0;
+			border-top-right-radius: 0px;
+			border-bottom-right-radius: 0px;
+			border-top-left-radius: 10px;
+			border-bottom-left-radius: 10px;
+		}
+		.galleryContainer #slideShowContainer .leftArrow:hover,.galleryContainer #slideShowContainer .rightArrow:hover{
+			background: #000000a8;
+			cursor: pointer;
+		}
+		.galleryContainer #slideShowContainer .arrow {
+			display: inline-block;
+			border:3px solid white;
+			width :10px;
+			height:10px;
+			border-left:none;
+			border-bottom:none;
+			position:absolute;
+			margin:auto;
+			left:0;
+			right:0;
+			top:0;
+			bottom:0;
+		}
+		.galleryContainer #slideShowContainer .arrow.arrowLeft{
+			transform: rotateZ(-135deg);
+		}
+		.galleryContainer #slideShowContainer .arrow.arrowRight{
+			transform: rotateZ(45deg);
+		}
+		.galleryContainer #slideShowContainer .captionHolder {
+			position:absolute;
+			bottom : 0;
+			z-index: 1;
+			color: white;
+			font-size: 20px;
+			text-align: center;
+			width: 100%;
+			background: #00000003;
+			height :50px;
+			line-height: 50px;
+			overflow: hidden;
+			font-family: sans-serif;
+		}
+		.galleryContainer #slideShowContainer .captionHolder .captionText{
+			position:absolute;
+			bottom : 0;
+			z-index: 1;
+			color: white;
+			font-size: 20px;
+			text-align: center;
+			width: 100%;
+			background: #00000001;
+			height :50px;
+			line-height: 50px;
+			overflow: hidden;
+			font-family: sans-serif;
+		}
+		.galleryContainer #dotsContainer {
+			width: 100%;
+			height: 10%;
+			text-align: center;
+			padding-top: 20px;
+			box-sizing: border-box;
+		}
+		.galleryContainer #dotsContainer .dots {
+			display: inline-block;
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+			margin-left: 10px;
+			background-color: #bbb;
+			cursor: pointer;
+			transition: background-color 0.5s;
+		}
+		.galleryContainer #dotsContainer .dots:hover,.galleryContainer #dotsContainer .dots.active{
+			background-color: #717171;
+		}
+		.galleryContainer #dotsContainer .dots:first-child{
+			margin-left: 0;
+		}
+		.galleryContainer .moveLeftCurrentSlide {
+			animation-name: moveLeftCurrent ;
+			animation-duration:0.4s ;
+			animation-timing-function: linear;
+			animation-fill-mode: forwards;
+		}
+
+		.galleryContainer .moveLeftNextSlide {
+			animation-name: moveLeftNext ;
+			animation-duration:0.4s ;
+			animation-timing-function: linear;
+			animation-fill-mode: forwards;
+		}
+
+		@keyframes moveLeftCurrent {
+			from {margin-left: 0;opacity: 1;}to{margin-left: -100%;opacity: 1;}
+		}
+		@keyframes moveLeftNext {
+			from {margin-left: 100%;opacity: 1;}to{margin-left: 0%;opacity: 1;}
+		}
+		.galleryContainer .moveRightCurrentSlide {
+			animation-name: moveRightCurrent ;
+			animation-duration:0.5s ;
+			animation-timing-function: linear;
+			animation-fill-mode: forwards;
+		}
+		@keyframes moveRightCurrent {
+			from {margin-left: 0;opacity: 1;}to{margin-left: 100%;opacity: 1;}
+		}
+
+		.galleryContainer .moveRightNextSlide {
+			animation-name: moveRightNext ;
+			animation-duration:0.5s ;
+			animation-timing-function: linear;
+			animation-fill-mode: forwards;
+		}
+		@keyframes moveRightNext {
+			from {margin-left: -100%;opacity: 1;}to{margin-left: 0;opacity: 1;}
+		}
+
+	</style>
+	<script>
+		var slideIndex,slides,dots,captionText;
+		function initGallery() {
+			slideIndex=0;
+			slides=document.getElementsByClassName("imagesHolder");
+			slides[slideIndex].style.opacity=1;
+
+			captionText=document.querySelector(".captionHolder .captionText");
+			captionText.innerHTML=slides[slideIndex].querySelector(".captionText").innerHTML ;
+
+			dots=[];
+			var dotsContainer=document.getElementById('dotsContainer');
+
+			for(var i=0;i<slides.length;i++)
+			{
+				var dot=document.createElement("span");
+				dot.classList.add("dots");
+				dot.setAttribute("onClick","moveSlide("+i+")");
+				dotsContainer.append(dot);
+				dots.push(dot);
+				//alert(i);
+			}
+			dots[slideIndex].classList.add("active");
+		}
+		initGallery();
+		function plusSlides(n){
+			moveSlide(slideIndex+n);
+		}
+		function moveSlide(n) {
+			var i,current,next;
+			var moveSlideAnimClass={forCurrent:"",forNext:""};
+			if (n>slideIndex)
+			{ if (n>=slides.length) {n=0;}
+				moveSlideAnimClass.forCurrent="moveLeftCurrentSlide";
+				moveSlideAnimClass.forNext="moveLeftNextSlide";
+			}else if(n<slideIndex)
+			{if(n<0) {n=slides.length-1;}
+				moveSlideAnimClass.forCurrent="moveRightCurrentSlide";
+				moveSlideAnimClass.forNext="moveRightNextSlide";
+			}
+			if(n!=slideIndex){
+				next=slides[n];
+				current=slides[slideIndex];
+				for (i=0;i<slides.length;i++){
+					slides[i].className="imagesHolder";
+					slides[i].style.opacity=0;
+					dots[i].classList.remove("active");
+				}
+				current.classList.add(moveSlideAnimClass.forCurrent);
+				next.classList.add(moveSlideAnimClass.forNext);
+				dots[n].classList.add("active");
+				slideIndex=n;
+			}
+		}
+	</script>
+{% endblock %}
